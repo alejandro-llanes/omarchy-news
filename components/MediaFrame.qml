@@ -18,8 +18,9 @@ Item {
   property real radius: Style.cornerRadius
   property bool compact: false
   // Decoding a 2000px press photo into a 120px thumbnail costs real memory per
-  // card. The frame tells Qt the size it actually needs.
+  // card. The frame tells Qt the size it actually needs, in both axes.
   property int decodeWidth: Math.max(64, Math.round(width * 2))
+  property int decodeHeight: Math.max(64, Math.round(height * 2))
 
   readonly property var media: story && story.media ? story.media : ({})
   readonly property string localArtwork: story && story.artwork ? story.artwork : ""
@@ -136,7 +137,14 @@ Item {
       asynchronous: true
       cache: true
       smooth: true
+      // BOTH dimensions. With only a width, the decode height follows the
+      // image's own aspect ratio, so a tall picture still decodes into a large
+      // bitmap however narrow the card is. Qt scales to fit inside the box when
+      // both are given, which makes the decode target a function of the card
+      // rather than of anything the publisher chose. bin/news-media refuses
+      // absurd geometry before this point; this is the second wall.
       sourceSize.width: root.decodeWidth
+      sourceSize.height: root.decodeHeight
       opacity: status === Image.Ready ? 1 : 0
       Behavior on opacity { NumberAnimation { duration: 260; easing.type: Easing.OutCubic } }
 

@@ -31,6 +31,16 @@ readonly UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gec
 # roughly byte 698,000). Pages smaller than the cap cost nothing extra.
 readonly PAGE_MAX_BYTES=1048576
 readonly IMAGE_MAX_BYTES=4194304    # 4 MB; a card is a few hundred px wide
+
+# Encoded size is not decode size. A few hundred KB of highly compressible PNG
+# can describe a 200 x 100000 canvas, which costs bytes to fetch and gigabytes
+# to decode -- and the decode happens inside the long-lived shell. So the
+# geometry is read from the header and capped too. Real lead artwork runs about
+# 1-3 megapixels; 16 MP is five times the largest thing a publisher has any
+# reason to serve, and 6000 px on a side refuses the pathological aspect ratios
+# that make a small file expensive.
+readonly IMAGE_MAX_DIM=6000
+readonly IMAGE_MAX_PIXELS=16000000
 readonly CONNECT_TIMEOUT=8
 readonly TOTAL_TIMEOUT=20
 
@@ -136,14 +146,20 @@ download_image() {
   # A server can answer an image request with anything at all. Trusting the
   # bytes rather than the URL keeps HTML error pages out of the picture cache.
   mime=$(file -b --mime-type -- "$tmp" 2>/dev/null)
+  local coder
   case $mime in
-    image/jpeg) ext=jpg ;;
-    image/png)  ext=png ;;
-    image/webp) ext=webp ;;
-    image/gif)  ext=gif ;;
-    image/avif) ext=avif ;;
+    image/jpeg) ext=jpg;  coder=JPEG ;;
+    image/png)  ext=png;  coder=PNG  ;;
+    image/webp) ext=webp; coder=WEBP ;;
+    image/gif)  ext=gif;  coder=GIF  ;;
+    image/avif) ext=avif; coder=AVIF ;;
     *) rm -f -- "$tmp"; return 1 ;;
   esac
+
+  if ! within_pixel_budget "$tmp" "$coder"; then
+    rm -f -- "$tmp"
+    return 1
+  fi
 
   dest="$CACHE_DIR/$key.$ext"
   mv -f -- "$tmp" "$dest" 2>/dev/null || { rm -f -- "$tmp"; return 1; }
@@ -152,6 +168,31 @@ download_image() {
 }
 
 file_size() { stat -c%s -- "$1" 2>/dev/null || printf '0'; }
+
+# Reads geometry from the image header and refuses anything that would decode
+# into more pixels than a bar plugin has any business allocating.
+#
+# `-ping` stops after the header instead of decoding the image, and the coder is
+# named explicitly from the already-sniffed MIME type so ImageMagick never
+# guesses a format (and never picks a delegate) from file contents. The resource
+# limits bound even that: header parsing of a malformed file cannot run away.
+# Unreadable geometry fails closed -- a picture whose size cannot be established
+# is not shown.
+within_pixel_budget() {
+  local path=$1 coder=$2 geometry w h
+  geometry=$(identify -quiet -ping \
+    -limit memory 32MiB -limit map 32MiB -limit disk 0 -limit thread 1 -limit time 5 \
+    -format '%w %h\n' "$coder:$path" 2>/dev/null | head -n 1)
+  [[ -n $geometry ]] || return 1
+
+  w=${geometry%% *}
+  h=${geometry##* }
+  [[ $w =~ ^[0-9]+$ && $h =~ ^[0-9]+$ ]] || return 1
+  (( w > 0 && h > 0 )) || return 1
+  (( w <= IMAGE_MAX_DIM && h <= IMAGE_MAX_DIM )) || return 1
+  (( w * h <= IMAGE_MAX_PIXELS )) || return 1
+  return 0
+}
 
 cmd_page() {
   local dir=$1 url=$2 id=$3

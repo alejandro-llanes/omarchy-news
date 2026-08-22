@@ -257,11 +257,23 @@ Only `http` and `https` URLs are ever accepted, at parse time — a feed cannot
 talk this plugin into handing a `file:` or `javascript:` URL to a browser launch
 or an image loader.
 
-A feed response is refused once it passes 4 MB, checked against the declared
-`Content-Length`, again while the body is still arriving, and once more before
-parsing. The shell is a single long-lived process that also draws the desktop,
-so a server answering a feed request with something enormous is a problem to
-bound rather than to buffer.
+A feed response is refused once it passes 4 MB. Qt raises `readystatechange`
+when the state changes rather than once per chunk, so a check written into that
+handler would run a single time and miss everything that arrived afterwards;
+the size is polled on a timer for as long as the request is open, alongside the
+declared `Content-Length` and a final check before parsing. The shell is a
+single long-lived process that also draws the desktop, so a server answering a
+feed request with something enormous is a problem to bound rather than to
+buffer.
+
+Artwork is bounded twice over, because encoded size is not decode size: a few
+hundred KB of compressible PNG can describe a 200 × 100000 canvas that costs
+gigabytes to decode. `bin/news-media` reads the geometry from the header only
+(`identify -ping`, with the coder named from the sniffed MIME type so no format
+is ever guessed, under its own resource limits) and refuses anything past 6000
+px on a side or 16 megapixels; unreadable geometry is refused too. The cards
+then pin both `sourceSize` axes, so the decode target follows the card rather
+than the publisher's aspect ratio.
 
 Every piece of feed-supplied text is stripped of markup before display, and
 every `Text` in the plugin asks for `PlainText` explicitly. Both, not either:

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.alejandro-llanes.news",
   "name": "News",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Alejandro Llanes",
   "license": "MIT",
   "description": "A news reader in the bar. Hacker News out of the box, any RSS/Atom feed you add, with article artwork, bookmarks, and a cache you control.",

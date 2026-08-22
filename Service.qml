@@ -254,15 +254,33 @@ Item {
     root.inFlight += 1
     root.setSourceStatus(source.sid, "fetching", "")
 
-    var watchdog = Qt.createQmlObject('import QtQuick; Timer { interval: 20000; repeat: false }', root)
+    // One repeating timer answers both questions that can only be asked on a
+    // clock: has this taken too long, and has too much of it arrived.
+    var elapsedMs = 0
+    var watchdog = Qt.createQmlObject('import QtQuick; Timer { interval: 300; repeat: true }', root)
+    function closeWatchdog() { watchdog.stop(); watchdog.destroy() }
+
     watchdog.triggered.connect(function() {
-      if (settled) return
-      settled = true
-      root.inFlight = Math.max(0, root.inFlight - 1)
-      try { xhr.abort() } catch (e) {}
-      root.setSourceStatus(source.sid, "error", "timed out after 20s")
-      root.note("warn", source.label + ": timed out")
-      watchdog.destroy()
+      if (settled) { closeWatchdog(); return }
+      elapsedMs += 300
+
+      // Qt emits readystatechange when the STATE changes, not once per chunk,
+      // so a handler branch on LOADING runs exactly once however much more
+      // arrives afterwards. Polling the buffer is therefore the only thing that
+      // actually bounds a body that keeps coming -- whether it is chunked, or
+      // simply declared a Content-Length it never intended to honour.
+      var received = 0
+      try { received = xhr.responseText ? xhr.responseText.length : 0 } catch (e) { received = 0 }
+      if (received > root.maxFeedBytes) { stopOversize("still arriving"); return }
+
+      if (elapsedMs >= 20000) {
+        settled = true
+        root.inFlight = Math.max(0, root.inFlight - 1)
+        closeWatchdog()
+        try { xhr.abort() } catch (e) {}
+        root.setSourceStatus(source.sid, "error", "timed out after 20s")
+        root.note("warn", source.label + ": timed out")
+      }
     })
     watchdog.start()
 
@@ -276,7 +294,7 @@ Item {
     function stopOversize(detail) {
       settled = true
       root.inFlight = Math.max(0, root.inFlight - 1)
-      watchdog.stop(); watchdog.destroy()
+      closeWatchdog()
       try { xhr.abort() } catch (e) {}
       root.setSourceStatus(source.sid, "error", "response too large (" + detail + ")")
       root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
@@ -292,18 +310,10 @@ Item {
         return
       }
 
-      // A chunked response declares nothing, so watch what has actually
-      // arrived. This is what bounds a body that never intends to end.
-      if (xhr.readyState === XMLHttpRequest.LOADING) {
-        var sofar = xhr.responseText ? xhr.responseText.length : 0
-        if (sofar > root.maxFeedBytes) stopOversize("still arriving")
-        return
-      }
-
       if (xhr.readyState !== XMLHttpRequest.DONE) return
       settled = true
       root.inFlight = Math.max(0, root.inFlight - 1)
-      watchdog.stop(); watchdog.destroy()
+      closeWatchdog()
 
       // status 0 means the request never reached a server: offline, DNS, TLS.
       if (xhr.status === 0) {
@@ -338,7 +348,7 @@ Item {
     } catch (e) {
       settled = true
       root.inFlight = Math.max(0, root.inFlight - 1)
-      watchdog.stop(); watchdog.destroy()
+      closeWatchdog()
       root.setSourceStatus(source.sid, "error", "request failed to start")
     }
   }
