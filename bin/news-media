@@ -14,6 +14,7 @@
 # outside the cache directory handed in on argv.
 #
 # Usage:
+#   news-media feed  <feed-url>                            fetch a feed, bounded
 #   news-media page  <cache-dir> <article-url> <item-id>   resolve + download
 #   news-media image <cache-dir> <image-url>   <item-id>   download only
 #   news-media list  <cache-dir>                           inventory the picture cache
@@ -43,6 +44,7 @@ readonly IMAGE_MAX_DIM=6000
 readonly IMAGE_MAX_PIXELS=16000000
 readonly CONNECT_TIMEOUT=8
 readonly TOTAL_TIMEOUT=20
+readonly FEED_MAX_BYTES=4194304     # 4 MB; the largest feed tested against is ~80 KB
 
 json_escape() {
   local s=${1-}
@@ -278,6 +280,47 @@ cmd_gc() {
   printf '{"ok":true,"deleted":%s,"bytes":%s}\n' "$deleted" "$freed"
 }
 
+# Fetch a feed body, bounded before it can reach the shell.
+#
+# This exists because QML's XMLHttpRequest offers no way to cap a response. It
+# buffers whatever arrives into the process that also draws the desktop, and a
+# ceiling enforced by watching that buffer is reactive by construction: between
+# any two observations a fast producer has already allocated whatever it liked.
+# The bound has to sit on the producer side of the transfer, which means curl.
+#
+# Two limits, because they fail in different directions. --max-filesize refuses
+# a transfer whose declared length is already too large, before a byte of body
+# is written. `head -c` covers the case that declaration cannot: a chunked
+# response, or an honest-looking header attached to a body that never stops --
+# head closes the pipe at the ceiling and curl dies of SIGPIPE. Either way the
+# shell is handed a bounded string.
+#
+# The body goes to stdout and one line of JSON metadata to stderr, so the two
+# never have to be disentangled from a single stream.
+cmd_feed() {
+  local url=$1
+  if ! is_http_url "$url"; then
+    printf '{"http":0,"error":"not an http url"}\n' >&2
+    return 0
+  fi
+
+  # curl's own stdout is the body and goes through head; %{stderr} in the
+  # write-out format puts the metadata on stderr, so the two streams separate
+  # themselves and neither needs parsing out of the other.
+  curl --silent --location --max-redirs 5 \
+       --connect-timeout "$CONNECT_TIMEOUT" --max-time "$TOTAL_TIMEOUT" \
+       --user-agent 'omarchy-news/1.0 (+quickshell)' \
+       --header 'Accept: application/rss+xml, application/atom+xml, application/xml, application/json;q=0.9, text/xml;q=0.8, */*;q=0.5' \
+       --proto '=http,https' \
+       --max-filesize "$FEED_MAX_BYTES" \
+       --write-out '%{stderr}{"http":%{http_code},"size":%{size_download},"exit":%{exitcode}}' \
+       "$url" | head -c "$FEED_MAX_BYTES"
+  # A truncated body means head shut the pipe and curl took SIGPIPE before it
+  # could report anything, so the caller treats a body at the ceiling as
+  # oversize regardless of what metadata did or did not arrive.
+  return 0
+}
+
 # Inventory, so the caller can tell which pictures on disk no story claims any
 # more and how much space the cache is actually using.
 cmd_list() {
@@ -302,6 +345,8 @@ main() {
            cmd_page "$2" "$3" "$4" ;;
     image) [[ $# -eq 4 ]] || { emit false "" "" "" "" "" 0 "usage: news-media image <dir> <url> <id>"; exit 0; }
            cmd_image "$2" "$3" "$4" ;;
+    feed)  [[ $# -eq 2 ]] || { printf '{"http":0,"error":"usage: news-media feed <url>"}\n' >&2; exit 0; }
+           cmd_feed "$2" ;;
     list)  [[ $# -eq 2 ]] || { printf '{"ok":false,"files":[],"bytes":0}\n'; exit 0; }
            cmd_list "$2" ;;
     gc)    [[ $# -ge 2 ]] || { printf '{"ok":false,"deleted":0,"bytes":0}\n'; exit 0; }

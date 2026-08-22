@@ -227,6 +227,11 @@ Item {
 
   function drain() {
     if (!root.queue.length) {
+      // Not finished until the last fetch has actually landed. An empty queue
+      // only means nothing more is waiting to start, and finishing early would
+      // run cleanup and artwork against a cache the final source has not been
+      // merged into yet.
+      if (root.inFlight > 0) return
       drainTimer.stop()
       root.draining = false
       if (root.refreshing) root.finishRefresh()
@@ -244,113 +249,101 @@ Item {
 
   // =========================================================================
   // Transport
+  //
+  // Feeds are fetched by bin/news-media rather than by QML's XMLHttpRequest.
+  // XHR offers no way to cap a response: it buffers whatever arrives into the
+  // process that also draws the desktop, and a ceiling enforced by watching
+  // that buffer is reactive by construction -- between any two observations a
+  // fast producer has already allocated whatever it wanted. curl bounds the
+  // transfer itself (--max-filesize refuses a declared oversize before a byte
+  // of body lands; `head -c` closes the pipe on anything that ignores the
+  // declaration), so what crosses back into the shell is a bounded string.
   // =========================================================================
+  property var fetchJob: null
+
   function fetch(source, manual) {
     var url = Sources.endpointFor(source, root.maxPerSource)
     if (!Fmt.isHttpUrl(url)) { root.setSourceStatus(source.sid, "error", "not a usable URL", 0); return }
 
-    var xhr = new XMLHttpRequest()
-    var settled = false
     root.inFlight += 1
+    root.fetchJob = { source: source, manual: manual === true }
     root.setSourceStatus(source.sid, "fetching", "")
+    feedProc.command = [root.helperPath, "feed", url]
+    feedProc.running = true
+    feedGuard.restart()
+  }
 
-    // One repeating timer answers both questions that can only be asked on a
-    // clock: has this taken too long, and has too much of it arrived.
-    var elapsedMs = 0
-    var watchdog = Qt.createQmlObject('import QtQuick; Timer { interval: 300; repeat: true }', root)
-    function closeWatchdog() { watchdog.stop(); watchdog.destroy() }
+  // curl gives up on its own at 20s. This only covers the helper itself
+  // wedging, which curl's timeout cannot speak for.
+  Timer {
+    id: feedGuard
+    interval: 30000; repeat: false
+    onTriggered: if (feedProc.running) feedProc.running = false
+  }
 
-    watchdog.triggered.connect(function() {
-      if (settled) { closeWatchdog(); return }
-      elapsedMs += 300
-
-      // Qt emits readystatechange when the STATE changes, not once per chunk,
-      // so a handler branch on LOADING runs exactly once however much more
-      // arrives afterwards. Polling the buffer is therefore the only thing that
-      // actually bounds a body that keeps coming -- whether it is chunked, or
-      // simply declared a Content-Length it never intended to honour.
-      var received = 0
-      try { received = xhr.responseText ? xhr.responseText.length : 0 } catch (e) { received = 0 }
-      if (received > root.maxFeedBytes) { stopOversize("still arriving"); return }
-
-      if (elapsedMs >= 20000) {
-        settled = true
-        root.inFlight = Math.max(0, root.inFlight - 1)
-        closeWatchdog()
-        try { xhr.abort() } catch (e) {}
-        root.setSourceStatus(source.sid, "error", "timed out after 20s")
-        root.note("warn", source.label + ": timed out")
-      }
-    })
-    watchdog.start()
-
-    // A response is not trusted to be feed-sized. The shell is one long-lived
-    // process that also draws the desktop, and XMLHttpRequest buffers the whole
-    // body in its heap, so a server that answers a feed request with gigabytes
-    // -- by malice, by misconfiguration, or by serving a video at that URL --
-    // would take the session down with it. The size is therefore checked at
-    // every point the transfer reveals it, and the request is abandoned at the
-    // first one that says too much.
-    function stopOversize(detail) {
-      settled = true
+  Process {
+    id: feedProc
+    running: false
+    stdout: StdioCollector { id: feedBody; waitForEnd: true }
+    stderr: StdioCollector { id: feedMeta; waitForEnd: true }
+    onExited: {
+      feedGuard.stop()
       root.inFlight = Math.max(0, root.inFlight - 1)
-      closeWatchdog()
-      try { xhr.abort() } catch (e) {}
-      root.setSourceStatus(source.sid, "error", "response too large (" + detail + ")")
-      root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
+      var job = root.fetchJob
+      root.fetchJob = null
+      if (job) root.completeFetch(job.source, String(feedBody.text || ""), String(feedMeta.text || ""))
     }
+  }
 
-    xhr.onreadystatechange = function() {
-      if (settled) return
+  // curl's exit code says precisely which way a fetch failed, which beats
+  // inferring it from an empty body.
+  readonly property int curlFileSizeExceeded: 63
+  readonly property int curlTimedOut: 28
+  readonly property int curlWriteError: 23
 
-      // Cheapest rejection: the server declared the length up front.
-      if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-        var declared = Number(xhr.getResponseHeader("Content-Length")) || 0
-        if (declared > root.maxFeedBytes) stopOversize(Fmt.bytes(declared) + " declared")
-        return
-      }
-
-      if (xhr.readyState !== XMLHttpRequest.DONE) return
-      settled = true
-      root.inFlight = Math.max(0, root.inFlight - 1)
-      closeWatchdog()
-
-      // status 0 means the request never reached a server: offline, DNS, TLS.
-      if (xhr.status === 0) {
-        root.setSourceStatus(source.sid, "offline", "could not be reached")
-        root.lastState = "offline"
-        return
-      }
-      if (xhr.status >= 400) {
-        root.setSourceStatus(source.sid, "error", "HTTP " + xhr.status)
-        root.note("warn", source.label + ": HTTP " + xhr.status)
-        return
-      }
-
-      // Last line: a body small enough to arrive in one piece never reaches
-      // the LOADING check above.
-      var body = xhr.responseText || ""
-      if (body.length > root.maxFeedBytes) {
-        root.setSourceStatus(source.sid, "error", "response too large (" + Fmt.bytes(body.length) + ")")
-        root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
-        return
-      }
-      root.ingest(source, body)
-    }
-
+  function completeFetch(source, body, metaRaw) {
+    var meta = null
     try {
-      xhr.open("GET", url)
-      // Some CDNs answer a bare request with a challenge page; a plain,
-      // honest UA gets the feed.
-      xhr.setRequestHeader("User-Agent", "omarchy-news/1.0 (+quickshell)")
-      xhr.setRequestHeader("Accept", "application/rss+xml, application/atom+xml, application/xml, application/json;q=0.9, text/xml;q=0.8, */*;q=0.5")
-      xhr.send()
-    } catch (e) {
-      settled = true
-      root.inFlight = Math.max(0, root.inFlight - 1)
-      closeWatchdog()
-      root.setSourceStatus(source.sid, "error", "request failed to start")
+      var brace = metaRaw.indexOf("{")
+      if (brace >= 0) meta = JSON.parse(metaRaw.slice(brace))
+    } catch (e) { meta = null }
+
+    var exitCode = meta && meta.exit !== undefined ? Number(meta.exit) : -1
+    var http = meta && meta.http !== undefined ? Number(meta.http) : 0
+
+    // A body sitting exactly at the ceiling is one head truncated, so curl was
+    // killed mid-transfer and may not have reported anything at all.
+    if (body.length >= root.maxFeedBytes || exitCode === root.curlFileSizeExceeded
+        || exitCode === root.curlWriteError) {
+      root.setSourceStatus(source.sid, "error", "response over " + Fmt.bytes(root.maxFeedBytes))
+      root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
+      return
     }
+    if (meta && meta.error) {
+      root.setSourceStatus(source.sid, "error", String(meta.error))
+      return
+    }
+    if (exitCode === root.curlTimedOut) {
+      root.setSourceStatus(source.sid, "error", "timed out")
+      root.note("warn", source.label + ": timed out")
+      return
+    }
+    // http 0 means the request never reached a server: offline, DNS, TLS.
+    if (http === 0) {
+      root.setSourceStatus(source.sid, "offline", "could not be reached")
+      root.lastState = "offline"
+      return
+    }
+    if (http >= 400) {
+      root.setSourceStatus(source.sid, "error", "HTTP " + http)
+      root.note("warn", source.label + ": HTTP " + http)
+      return
+    }
+    if (!body.length) {
+      root.setSourceStatus(source.sid, "error", "empty response")
+      return
+    }
+    root.ingest(source, body)
   }
 
   function ingest(source, body) {

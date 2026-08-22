@@ -257,14 +257,15 @@ Only `http` and `https` URLs are ever accepted, at parse time — a feed cannot
 talk this plugin into handing a `file:` or `javascript:` URL to a browser launch
 or an image loader.
 
-A feed response is refused once it passes 4 MB. Qt raises `readystatechange`
-when the state changes rather than once per chunk, so a check written into that
-handler would run a single time and miss everything that arrived afterwards;
-the size is polled on a timer for as long as the request is open, alongside the
-declared `Content-Length` and a final check before parsing. The shell is a
-single long-lived process that also draws the desktop, so a server answering a
-feed request with something enormous is a problem to bound rather than to
-buffer.
+Feeds are fetched by `bin/news-media`, not by the shell. QML's
+`XMLHttpRequest` offers no way to cap a response — it buffers whatever arrives
+into the process that also draws your desktop, and a ceiling enforced by
+watching that buffer is reactive by construction, since between any two
+observations a fast server has already allocated whatever it liked. So the
+bound sits on the producer side: `curl --max-filesize` refuses a transfer whose
+declared length is already too large before a byte of body is written, and a
+`head -c` at the ceiling closes the pipe on anything that ignores its own
+declaration. What crosses back into the shell is a bounded string.
 
 Artwork is bounded twice over, because encoded size is not decode size: a few
 hundred KB of compressible PNG can describe a 200 × 100000 canvas that costs
