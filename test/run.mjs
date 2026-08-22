@@ -34,6 +34,28 @@ eq("script bodies are removed, not unwrapped",
    F.stripHtml("<p>Real<script>var x=1;</script></p>"), "Real")
 eq("block tags become spaces", F.stripHtml("<p>one</p><p>two</p>"), "one two")
 eq("truncate breaks on a word", F.truncate("the quick brown fox jumps", 12), "the quick…")
+
+// Markup that comes back after the entities are decoded. A feed controls both
+// its titles and its summaries, and the old pipeline decoded AFTER stripping,
+// so "&lt;img src=...&gt;" left the sanitiser as a live tag. Any Text on Qt's
+// default AutoText then renders it and the publisher gets a read receipt.
+eq("double-escaped markup does not survive",
+   F.stripHtml("&lt;img src=http://tracker/x.png&gt;"), "")
+eq("triple-escaped markup does not survive",
+   F.stripHtml("&amp;lt;img src=http://tracker/x.png&amp;gt;"), "")
+eq("a plain tag does not survive", F.stripHtml("<img src=http://tracker/>"), "")
+eq("nor does one wrapped in CDATA",
+   F.stripHtml("<![CDATA[&lt;img src=http://tracker/&gt;]]>"), "")
+// Nothing that leaves the sanitiser may still look like a tag to Qt's
+// rich-text heuristic, because strings handed to shell components (the bar
+// tooltip) are rendered by a Text this plugin does not configure.
+ok("no output can open a tag", ["&lt;img src=x&gt;", "<b>hi</b>", "x<b", "a<!--c-->b"]
+   .every(v => !/<[a-zA-Z\/!?]/.test(F.stripHtml(v))))
+// ...while ordinary prose keeps reading like prose.
+eq("a legitimate less-than is kept", F.stripHtml("a &lt; b"), "a < b")
+eq("entities still decode", F.stripHtml("Tom &amp; Jerry"), "Tom & Jerry")
+eq("script bodies still go", F.stripHtml("Real<script>evil()</script>"), "Real")
+
 eq("truncate leaves short text alone", F.truncate("short", 12), "short")
 
 // URLs: anything not http(s) must not survive, because these reach both a

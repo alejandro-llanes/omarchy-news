@@ -58,6 +58,11 @@ Item {
   readonly property int unreadCount: stats.unread
   readonly property int bookmarkCount: stats.bookmarked
 
+  // Ceiling on a single feed response. The largest feed this was built against
+  // is Ars Technica at about 80 KB with full article bodies, so 4 MB is two
+  // orders of magnitude of headroom for a legitimate feed and still a bound.
+  readonly property int maxFeedBytes: 4 * 1024 * 1024
+
   // How many artwork lookups one refresh may spend. Each is a single request
   // to a different publisher, run strictly one at a time with a gap between,
   // so a full budget is about two minutes of trickle rather than a burst. Set
@@ -261,8 +266,41 @@ Item {
     })
     watchdog.start()
 
+    // A response is not trusted to be feed-sized. The shell is one long-lived
+    // process that also draws the desktop, and XMLHttpRequest buffers the whole
+    // body in its heap, so a server that answers a feed request with gigabytes
+    // -- by malice, by misconfiguration, or by serving a video at that URL --
+    // would take the session down with it. The size is therefore checked at
+    // every point the transfer reveals it, and the request is abandoned at the
+    // first one that says too much.
+    function stopOversize(detail) {
+      settled = true
+      root.inFlight = Math.max(0, root.inFlight - 1)
+      watchdog.stop(); watchdog.destroy()
+      try { xhr.abort() } catch (e) {}
+      root.setSourceStatus(source.sid, "error", "response too large (" + detail + ")")
+      root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
+    }
+
     xhr.onreadystatechange = function() {
-      if (xhr.readyState !== XMLHttpRequest.DONE || settled) return
+      if (settled) return
+
+      // Cheapest rejection: the server declared the length up front.
+      if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+        var declared = Number(xhr.getResponseHeader("Content-Length")) || 0
+        if (declared > root.maxFeedBytes) stopOversize(Fmt.bytes(declared) + " declared")
+        return
+      }
+
+      // A chunked response declares nothing, so watch what has actually
+      // arrived. This is what bounds a body that never intends to end.
+      if (xhr.readyState === XMLHttpRequest.LOADING) {
+        var sofar = xhr.responseText ? xhr.responseText.length : 0
+        if (sofar > root.maxFeedBytes) stopOversize("still arriving")
+        return
+      }
+
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
       settled = true
       root.inFlight = Math.max(0, root.inFlight - 1)
       watchdog.stop(); watchdog.destroy()
@@ -278,7 +316,16 @@ Item {
         root.note("warn", source.label + ": HTTP " + xhr.status)
         return
       }
-      root.ingest(source, xhr.responseText)
+
+      // Last line: a body small enough to arrive in one piece never reaches
+      // the LOADING check above.
+      var body = xhr.responseText || ""
+      if (body.length > root.maxFeedBytes) {
+        root.setSourceStatus(source.sid, "error", "response too large (" + Fmt.bytes(body.length) + ")")
+        root.note("warn", source.label + ": refused a response over " + Fmt.bytes(root.maxFeedBytes))
+        return
+      }
+      root.ingest(source, body)
     }
 
     try {
@@ -320,7 +367,7 @@ Item {
     root.lastRefreshMs = Date.now()
     root.cleanup(false)
     root.save()
-    if (root.fetchArtwork && !root.pauseNetwork) root.startEnrichment()
+    if (!root.pauseNetwork) root.startEnrichment()
   }
 
   // =========================================================================
@@ -333,11 +380,37 @@ Item {
   property bool enriching: false
   property string enrichingId: ""
 
+  // Two different jobs behind one helper, and only one of them is what the
+  // "fetch missing artwork" setting governs:
+  //
+  //   image -- download a picture the feed itself named. Not a lookup; the
+  //            publisher already put the URL in the feed it served us. Since
+  //            the cards render local files only, this is the sole way any
+  //            picture reaches the screen, so it runs whenever the network is
+  //            allowed at all.
+  //   page  -- read an article page hoping to find a picture the feed omitted.
+  //            That is a request the feed did not ask for, aimed at a server
+  //            we were not otherwise talking to, so it is what the setting
+  //            switches off.
+  //
+  // `enrichRetried` marks the fallback pass: the page was tried and gave
+  // nothing, so take the small picture the feed named after all.
+  function enrichModeFor(item) {
+    var media = item.media || {}
+    var usable = media.image && (!media.weak || item.enrichRetried === true || !item.link)
+    return usable ? "image" : "page"
+  }
+
   function startEnrichment() {
     if (root.enriching) return
     var pending = Store.enrichQueue(root.items, root.enrichBudget)
-    if (!pending.length) return
-    root.enrichQueue = pending
+    var permitted = []
+    for (var i = 0; i < pending.length; i++) {
+      if (!root.fetchArtwork && root.enrichModeFor(pending[i]) === "page") continue
+      permitted.push(pending[i])
+    }
+    if (!permitted.length) return
+    root.enrichQueue = permitted
     root.enrichNext()
   }
 
@@ -349,7 +422,7 @@ Item {
       root.save()
       return
     }
-    if (root.pauseNetwork || !root.fetchArtwork) { root.enrichQueue = []; root.enriching = false; return }
+    if (root.pauseNetwork) { root.enrichQueue = []; root.enriching = false; return }
 
     var q = root.enrichQueue.slice()
     var item = q.shift()
@@ -357,14 +430,8 @@ Item {
     root.enriching = true
     root.enrichingId = item.id
 
-    // Two different jobs behind one helper: when the feed already named a
-    // picture worth having, only download it; when it did not, read the article
-    // page first. `enrichRetried` marks the fallback pass -- the page was tried
-    // and gave nothing, so take the small picture the feed named after all.
-    var media = item.media || {}
-    var haveUsableImage = media.image && (!media.weak || item.enrichRetried === true || !item.link)
-    if (haveUsableImage) {
-      enrichProc.command = [root.helperPath, "image", root.artworkDir, media.image, item.id]
+    if (root.enrichModeFor(item) === "image") {
+      enrichProc.command = [root.helperPath, "image", root.artworkDir, item.media.image, item.id]
     } else {
       enrichProc.command = [root.helperPath, "page", root.artworkDir, item.link, item.id]
     }
@@ -597,7 +664,8 @@ Item {
     var it = root.itemById(id)
     // A newly bookmarked story with no picture yet is worth one lookup now:
     // it is the one story we know the user wants to keep.
-    if (it && it.bookmarked && !it.artwork && root.fetchArtwork && !root.pauseNetwork && !root.enriching) {
+    if (it && it.bookmarked && !it.artwork && !root.pauseNetwork && !root.enriching
+        && (root.fetchArtwork || root.enrichModeFor(it) === "image")) {
       root.enrichQueue = [it]
       root.enrichNext()
     }

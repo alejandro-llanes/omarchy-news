@@ -51,6 +51,7 @@ Rectangle {
     spacing: Style.spacing.sm
 
     Text {
+      textFormat: Text.PlainText
       anchors.verticalCenter: parent.verticalCenter
       visible: root.iconText !== ""
       text: root.iconText
@@ -62,6 +63,7 @@ Rectangle {
     }
 
     Text {
+      textFormat: Text.PlainText
       anchors.verticalCenter: parent.verticalCenter
       text: root.label
       font.family: Style.font.family
@@ -72,6 +74,7 @@ Rectangle {
     }
 
     Text {
+      textFormat: Text.PlainText
       anchors.verticalCenter: parent.verticalCenter
       visible: root.count > 0
       text: root.count > 99 ? "99+" : String(root.count)

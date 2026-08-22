@@ -145,6 +145,7 @@ BarWidget {
       visible: !root.vertical
 
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         text: root.icon
         font.family: root.bar ? root.bar.fontFamily : Style.font.family
@@ -157,6 +158,7 @@ BarWidget {
       // Unread count. Present in headline and count modes; icon mode is the
       // quietest option the settings menu offers, and a number is not quiet.
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         visible: root.barMode !== "icon" && root.unread > 0
         text: root.unread > 99 ? "99+" : String(root.unread)
@@ -167,6 +169,7 @@ BarWidget {
       }
 
       Text {
+        textFormat: Text.PlainText
         id: headlineText
         anchors.verticalCenter: parent.verticalCenter
         visible: root.barMode === "headline" && root.headline !== null && root.headlineChars > 0
@@ -191,6 +194,7 @@ BarWidget {
       // Cache-only is a mode the user chose, so it is stated rather than
       // hidden -- otherwise a stale bar looks like a broken one.
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         visible: root.svc && root.svc.pauseNetwork
         text: "offline"
@@ -210,6 +214,7 @@ BarWidget {
       spacing: Style.space(1)
 
       Text {
+        textFormat: Text.PlainText
         anchors.horizontalCenter: parent.horizontalCenter
         text: root.icon
         font.family: root.bar ? root.bar.fontFamily : Style.font.family
@@ -219,6 +224,7 @@ BarWidget {
       }
 
       Text {
+        textFormat: Text.PlainText
         anchors.horizontalCenter: parent.horizontalCenter
         visible: root.barMode !== "icon" && root.unread > 0
         text: root.unread > 9 ? "9+" : String(root.unread)

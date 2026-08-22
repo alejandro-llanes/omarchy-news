@@ -141,6 +141,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "NEWS"
             font.family: Style.font.family
@@ -152,6 +153,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "settings"
             font.family: Style.font.family
@@ -212,6 +214,7 @@ KeyboardPanel {
                   spacing: 0
 
                   Text {
+                    textFormat: Text.PlainText
                     width: parent.width
                     text: modelData.label
                     font.family: Style.font.family
@@ -223,6 +226,7 @@ KeyboardPanel {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     width: parent.width
                     text: {
                       if (modelData.type === "hn") return "news.ycombinator.com · " + modelData.feed.replace(/_/g, " ")
@@ -311,6 +315,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             visible: menu.addError !== ""
             text: menu.addError
@@ -326,6 +331,7 @@ KeyboardPanel {
             spacing: Style.spacing.sm
 
             Text {
+              textFormat: Text.PlainText
               anchors.verticalCenter: parent.verticalCenter
               text: "or add a known one"
               font.family: Style.font.family
@@ -363,6 +369,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: {
               if (!menu.svc) return ""
@@ -398,6 +405,7 @@ KeyboardPanel {
           spacing: Style.spacing.lg
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "Bar shows"
             font.family: Style.font.family
@@ -474,6 +482,7 @@ KeyboardPanel {
         }
 
         Text {
+          textFormat: Text.PlainText
           width: parent.width
           text: {
             if (!menu.svc) return ""
@@ -493,6 +502,7 @@ KeyboardPanel {
         // The promise, stated where the destructive buttons are, because this
         // is the moment a user needs to read it.
         Text {
+          textFormat: Text.PlainText
           width: parent.width
           text: "Bookmarks are never removed by either button, at any age."
           font.family: Style.font.family
@@ -545,6 +555,7 @@ KeyboardPanel {
           spacing: Style.spacing.lg
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "Bar section"
             font.family: Style.font.family
@@ -562,6 +573,7 @@ KeyboardPanel {
         }
 
         Text {
+          textFormat: Text.PlainText
           width: parent.width
           text: "In the reader:  j k move  ·  enter opens  ·  c discussion  ·  b bookmark  ·  y copy link  ·  u unread only  ·  / filter  ·  tab source  ·  r refresh"
           font.family: Style.font.family

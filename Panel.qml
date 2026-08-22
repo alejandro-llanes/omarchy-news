@@ -188,6 +188,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "NEWS"
             font.family: Style.font.family
@@ -199,6 +200,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             visible: panel.stats.unread > 0
             text: panel.stats.unread + " unread"
@@ -210,6 +212,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             visible: panel.svc && panel.svc.pauseNetwork
             text: "· cache only"
@@ -385,6 +388,7 @@ KeyboardPanel {
           visible: panel.stories.length === 0
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             text: {
@@ -402,6 +406,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             text: {
@@ -422,6 +427,7 @@ KeyboardPanel {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             visible: text !== ""
@@ -459,6 +465,7 @@ KeyboardPanel {
           spacing: Style.spacing.md
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: {
               if (!panel.svc) return ""
@@ -477,6 +484,7 @@ KeyboardPanel {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.right: parent.right
           anchors.verticalCenter: parent.verticalCenter
           text: {

@@ -137,8 +137,15 @@ summary. That last one matters more than it sounds: The Verge declares no media
 element at all and buries its lead image in a CDATA summary.
 
 When the feed provides nothing, the article page's OpenGraph tags are read for a
-lead image. Everything found is downloaded to disk, so opening the reader a
-second time costs the publisher nothing.
+lead image.
+
+Everything found is downloaded to disk first, and **cards only ever render
+files from that local cache** — the reader never points an image at a
+publisher's URL. Two reasons. A remote image loaded by the shell would sit
+outside the download limits, with nothing checking that what came back is even
+an image; and it would tell the publisher the moment you laid eyes on the
+headline. A story whose picture has not been fetched yet shows its plate until
+it has.
 
 Stories that genuinely have no picture anywhere — plain-text blogs, most of the
 better ones — get a plate generated from the publisher's domain instead of a
@@ -149,9 +156,13 @@ Feeds that carry video (a YouTube channel feed, a podcast with video enclosures)
 show the poster frame with a play badge and open in your browser, which is where
 the codecs and the logins already are.
 
-Turn artwork fetching off and only what the feed itself ships is used. Turn
-artwork display off and you get a dense, text-only list — pictures already on
-disk are kept, not deleted.
+"Fetch missing artwork" governs the second step only — reading article pages
+for a picture the feed left out. Turn it off and the reader still caches the
+images feeds name themselves, but contacts no server the feed did not already
+point at. "Cache only" stops everything.
+
+Turn artwork display off and you get a dense, text-only list — pictures already
+on disk are kept, not deleted.
 
 ## Settings
 
@@ -164,7 +175,7 @@ to drift out of sync with the bar.
 | Refresh every | 30 min | Every source on the same tick, spaced apart |
 | Keep unread for | 7 days | Bookmarks ignore this |
 | Stories per source | 40 | Bookmarks sit outside the cap |
-| Fetch missing artwork | on | Reads the article page's OpenGraph tags |
+| Fetch missing artwork | on | Reads article pages for a picture the feed omitted. Off still caches images the feed names itself |
 | Show artwork in cards | on | Off gives a dense text list |
 | Cache only | off | A real kill switch: nothing leaves the machine |
 | Bar shows | headline | `headline` rotates unread, or `count`, or `icon` |
@@ -245,6 +256,19 @@ does not resolve inside the cache directory.
 Only `http` and `https` URLs are ever accepted, at parse time — a feed cannot
 talk this plugin into handing a `file:` or `javascript:` URL to a browser launch
 or an image loader.
+
+A feed response is refused once it passes 4 MB, checked against the declared
+`Content-Length`, again while the body is still arriving, and once more before
+parsing. The shell is a single long-lived process that also draws the desktop,
+so a server answering a feed request with something enormous is a problem to
+bound rather than to buffer.
+
+Every piece of feed-supplied text is stripped of markup before display, and
+every `Text` in the plugin asks for `PlainText` explicitly. Both, not either:
+markup that is double-escaped in the feed reappears when the entities are
+decoded, and a `Text` left on Qt's default `AutoText` would render the result —
+including any `<img>` it contains, which is a read receipt sent to whoever
+wrote the feed.
 
 ## Tests
 

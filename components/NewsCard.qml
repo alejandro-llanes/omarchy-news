@@ -102,6 +102,7 @@ Rectangle {
       spacing: Style.spacing.xs
 
       Text {
+        textFormat: Text.PlainText
         id: headline
         width: parent.width
         text: root.story ? root.story.title : ""
@@ -124,6 +125,7 @@ Rectangle {
         spacing: Style.spacing.md
 
         Text {
+          textFormat: Text.PlainText
           anchors.verticalCenter: parent.verticalCenter
           text: root.story ? (root.story.domain || "") : ""
           font.family: Style.font.family
@@ -135,6 +137,7 @@ Rectangle {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.verticalCenter: parent.verticalCenter
           visible: text !== ""
           text: root.story && root.story.hasDate ? Fmt.relTime(root.story.publishedMs, root.now) : ""
@@ -146,6 +149,7 @@ Rectangle {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.verticalCenter: parent.verticalCenter
           visible: root.hasPoints
           text: "▲ " + Fmt.count(root.story ? root.story.points : 0)
@@ -157,6 +161,7 @@ Rectangle {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.verticalCenter: parent.verticalCenter
           visible: root.story && (Number(root.story.commentCount) || 0) > 0
           text: Fmt.count(root.story ? root.story.commentCount : 0) + " comments"
@@ -171,6 +176,7 @@ Rectangle {
       // Standfirst, focused cards only. Height is animated from zero so the
       // list settles instead of snapping.
       Text {
+        textFormat: Text.PlainText
         width: parent.width
         visible: root.expanded && root.hasSummary
         text: root.story ? Fmt.truncate(root.story.summary, 220) : ""

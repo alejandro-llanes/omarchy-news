@@ -23,6 +23,9 @@ Item {
 
   readonly property var media: story && story.media ? story.media : ({})
   readonly property string localArtwork: story && story.artwork ? story.artwork : ""
+  // The URL the publisher named. Recorded so the card can tell "no picture
+  // exists" from "the picture has not been downloaded yet", and deliberately
+  // NEVER handed to the Image below -- see the note on `source`.
   readonly property string remoteArtwork: media.image || media.poster || ""
   readonly property bool hasVideo: !!media.video
   readonly property bool hasArtwork: image.status === Image.Ready
@@ -84,6 +87,7 @@ Item {
     }
 
     Text {
+      textFormat: Text.PlainText
       anchors.centerIn: parent
       visible: !root.hasArtwork && !skeleton.visible
       text: root.monogram
@@ -117,11 +121,17 @@ Item {
     Image {
       id: image
       anchors.fill: parent
-      source: {
-        if (!root.showMedia) return ""
-        if (root.localArtwork && !root.localFailed) return Util.fileUrl(root.localArtwork)
-        return root.remoteArtwork
-      }
+      // Local files only, never a remote URL.
+      //
+      // Pointing an Image at a publisher's URL makes the shell itself fetch it:
+      // outside the helper's byte and time limits, with no check that what
+      // comes back is even an image, and announcing to the publisher exactly
+      // when the story was displayed. Everything shown here has already been
+      // through bin/news-media, which bounds the download and identifies the
+      // format by sniffing the bytes. A story whose picture has not been
+      // downloaded yet simply shows its plate until it has.
+      source: (root.showMedia && root.localArtwork && !root.localFailed)
+              ? Util.fileUrl(root.localArtwork) : ""
       fillMode: Image.PreserveAspectCrop
       asynchronous: true
       cache: true
@@ -131,8 +141,7 @@ Item {
       Behavior on opacity { NumberAnimation { duration: 260; easing.type: Easing.OutCubic } }
 
       // A cleanup can delete the file under a card that is already on screen.
-      // Falling back to the publisher's URL keeps the picture rather than
-      // punching a hole in the layout.
+      // The card falls back to its plate rather than to the publisher's URL.
       onStatusChanged: {
         if (status === Image.Error && root.localArtwork && !root.localFailed) root.localFailed = true
       }
@@ -154,6 +163,11 @@ Item {
     id: skeleton
     anchors.fill: parent
     radius: root.radius
+    // Decode only. Tying this to "a download is still pending" would pulse
+    // forever whenever the download is never going to arrive -- the page had no
+    // picture, or the network is switched off -- and a card that pulses
+    // indefinitely reads as broken. The plate shows immediately instead, and
+    // the picture replaces it if and when it lands.
     visible: root.showMedia && image.status === Image.Loading
     color: Qt.rgba(Color.foreground.r, Color.foreground.g, Color.foreground.b, 0.06)
 
@@ -192,6 +206,7 @@ Item {
     border.color: Qt.rgba(Color.foreground.r, Color.foreground.g, Color.foreground.b, 0.55)
 
     Text {
+      textFormat: Text.PlainText
       anchors.centerIn: parent
       // Nudged right by an eighth: a triangle glyph is optically left-heavy in
       // a circle when it is centred by its bounding box.

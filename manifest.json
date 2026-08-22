@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.alejandro-llanes.news",
   "name": "News",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Alejandro Llanes",
   "license": "MIT",
   "description": "A news reader in the bar. Hacker News out of the box, any RSS/Atom feed you add, with article artwork, bookmarks, and a cache you control.",
@@ -22,7 +22,12 @@
     "defaultSection": "left",
     "defaults": {
       "sources": [
-        { "type": "hn", "label": "Hacker News", "url": "", "enabled": true }
+        {
+          "type": "hn",
+          "label": "Hacker News",
+          "url": "",
+          "enabled": true
+        }
       ],
       "refreshMinutes": 30,
       "retentionDays": 7,
@@ -33,7 +38,7 @@
       "barMode": "headline",
       "rotateSeconds": 12,
       "markReadOnOpen": true,
-      "icon": ""
+      "icon": "\uf1ea"
     },
     "schema": [
       {
