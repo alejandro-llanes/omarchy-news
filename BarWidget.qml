@@ -8,7 +8,7 @@ import "lib/Store.js" as Store
 // and a per-widget fetch would poll every publisher once per screen.
 BarWidget {
   id: root
-  moduleName: "alejandro-llanes.news"
+  moduleName: "io.github.alejandro-llanes.news"
 
   // shell._services is reassigned wholesale, so reading it in a binding
   // registers a dependency and this re-fires when the service instantiates.

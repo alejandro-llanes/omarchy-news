@@ -25,7 +25,7 @@ install it directly:
 omarchy plugin add https://github.com/alejandro-llanes/omarchy-news.git
 ```
 
-That clones it into `~/.config/omarchy/plugins/alejandro-llanes.news/` and asks
+That clones it into `~/.config/omarchy/plugins/io.github.alejandro-llanes.news/` and asks
 whether to enable it and where to put it. To skip the prompts:
 
 ```bash
@@ -42,17 +42,17 @@ omarchy plugin add https://github.com/alejandro-llanes/omarchy-news.git --enable
 Keeping it current, and removing it:
 
 ```bash
-omarchy plugin update alejandro-llanes.news   # shows a diff, then fast-forwards
-omarchy plugin remove alejandro-llanes.news
+omarchy plugin update io.github.alejandro-llanes.news   # shows a diff, then fast-forwards
+omarchy plugin remove io.github.alejandro-llanes.news
 ```
 
 ### By hand
 
 ```bash
 git clone https://github.com/alejandro-llanes/omarchy-news.git \
-  ~/.config/omarchy/plugins/alejandro-llanes.news
+  ~/.config/omarchy/plugins/io.github.alejandro-llanes.news
 omarchy-shell shell rescanPlugins
-omarchy plugin enable alejandro-llanes.news
+omarchy plugin enable io.github.alejandro-llanes.news
 ```
 
 ### Requirements
@@ -203,20 +203,20 @@ The reader answers to shell IPC, so any Hyprland binding can open it:
 
 ```lua
 -- ~/.config/hypr/bindings.lua
-o.bind("SUPER SHIFT", "N", "omarchy-shell alejandro-llanes.news panel")
+o.bind("SUPER SHIFT", "N", "omarchy-shell io.github.alejandro-llanes.news panel")
 ```
 
 The full surface:
 
 ```bash
-omarchy-shell alejandro-llanes.news panel        # open/close the reader
-omarchy-shell alejandro-llanes.news config       # open/close the settings menu
-omarchy-shell alejandro-llanes.news bookmarks    # open the reader on saved stories
-omarchy-shell alejandro-llanes.news refresh      # fetch now
-omarchy-shell alejandro-llanes.news cleanup      # apply retention + cap now
-omarchy-shell alejandro-llanes.news clear        # drop everything except bookmarks
-omarchy-shell alejandro-llanes.news markAllRead
-omarchy-shell alejandro-llanes.news status       # JSON: counts, cache size, last refresh
+omarchy-shell io.github.alejandro-llanes.news panel        # open/close the reader
+omarchy-shell io.github.alejandro-llanes.news config       # open/close the settings menu
+omarchy-shell io.github.alejandro-llanes.news bookmarks    # open the reader on saved stories
+omarchy-shell io.github.alejandro-llanes.news refresh      # fetch now
+omarchy-shell io.github.alejandro-llanes.news cleanup      # apply retention + cap now
+omarchy-shell io.github.alejandro-llanes.news clear        # drop everything except bookmarks
+omarchy-shell io.github.alejandro-llanes.news markAllRead
+omarchy-shell io.github.alejandro-llanes.news status       # JSON: counts, cache size, last refresh
 ```
 
 ## How it is put together

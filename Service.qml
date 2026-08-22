@@ -20,7 +20,7 @@ Item {
   property var pluginRegistry: null
   property string omarchyPath: ""
 
-  readonly property string moduleId: "alejandro-llanes.news"
+  readonly property string moduleId: "io.github.alejandro-llanes.news"
 
   // ---- persisted state ----------------------------------------------------
   property string stateDir: ""
@@ -677,7 +677,7 @@ Item {
   }
 
   IpcHandler {
-    target: "alejandro-llanes.news"
+    target: "io.github.alejandro-llanes.news"
 
     function refresh(): string { return root.refreshAll(true) ? "ok" : "blocked" }
     function panel(): string { root.openPanelRequested(); return "ok" }
