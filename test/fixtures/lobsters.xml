@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lobsters</title>
+    <link>https://lobste.rs/</link>
+    <atom:link href="https://lobste.rs/rss/" rel="self"/>
+    <description></description>
+    <pubDate>Fri, 21 Aug 2026 10:15:16 -0500</pubDate>
+    <ttl>120</ttl>
+    <item>
+      <title>Enabling the next-generation trait solver on nightly</title>
+      <link>https://blog.rust-lang.org/2026/08/21/enabling-next-solver-on-nightly/</link>
+      <guid>https://lobste.rs/s/3giezs</guid>
+      <author>blog.rust-lang.org by jana</author>
+      <pubDate>Fri, 21 Aug 2026 10:15:16 -0500</pubDate>
+      <comments>https://lobste.rs/s/3giezs/enabling_next_generation_trait_solver_on</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/3giezs/enabling_next_generation_trait_solver_on"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>rust</category>
+    </item>
+    <item>
+      <title>I accidentally logged hundreds of thousands of phone calls to military bases</title>
+      <link>https://lina.sh/blog/hijacking-e164-arpa</link>
+      <guid>https://lobste.rs/s/dyswyz</guid>
+      <author>lina.sh via taavi</author>
+      <pubDate>Fri, 21 Aug 2026 07:05:00 -0500</pubDate>
+      <comments>https://lobste.rs/s/dyswyz/i_accidentally_logged_hundreds</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/dyswyz/i_accidentally_logged_hundreds"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>security</category>
+    </item>
+    <item>
+      <title>Japan tried to build an operating system for the entire world, then the US government intervened</title>
+      <link>https://www.xda-developers.com/japan-tried-build-operating-system-entire-world-us-government-intervened/</link>
+      <guid>https://lobste.rs/s/mfo0fd</guid>
+      <author>xda-developers.com via lproven</author>
+      <pubDate>Fri, 21 Aug 2026 07:47:30 -0500</pubDate>
+      <comments>https://lobste.rs/s/mfo0fd/japan_tried_build_operating_system_for</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/mfo0fd/japan_tried_build_operating_system_for"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>historical</category>
+      <category>osdev</category>
+      <category>retrocomputing</category>
+    </item>
+    <item>
+      <title>Felony Bench: Be AI, Do Crime</title>
+      <link>https://www.felonybench.com/</link>
+      <guid>https://lobste.rs/s/pywde0</guid>
+      <author>felonybench.com via pushcx</author>
+      <pubDate>Fri, 21 Aug 2026 12:23:02 -0500</pubDate>
+      <comments>https://lobste.rs/s/pywde0/felony_bench_be_ai_do_crime</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/pywde0/felony_bench_be_ai_do_crime"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>Better Batteries</title>
+      <link>https://matklad.github.io/2026/08/20/better-batteries.html</link>
+      <guid>https://lobste.rs/s/qxvz7f</guid>
+      <author>matklad.github.io via olex</author>
+      <pubDate>Fri, 21 Aug 2026 02:47:50 -0500</pubDate>
+      <comments>https://lobste.rs/s/qxvz7f/better_batteries</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/qxvz7f/better_batteries"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>programming</category>
+      <category>plt</category>
+    </item>
+    <item>
+      <title>Btrfs Snapshot Integration in KDE</title>
+      <link>https://bharadwajraju.com/posts/btrfs-snapshots-in-kde/</link>
+      <guid>https://lobste.rs/s/umey8v</guid>
+      <author>bharadwajraju.com via gnafuthegreat</author>
+      <pubDate>Fri, 21 Aug 2026 00:14:08 -0500</pubDate>
+      <comments>https://lobste.rs/s/umey8v/btrfs_snapshot_integration_kde</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/umey8v/btrfs_snapshot_integration_kde"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>linux</category>
+      <category>osdev</category>
+    </item>
+    <item>
+      <title>Music theory for programmers</title>
+      <link>https://runjs.app/blog/music-theory-for-programmers</link>
+      <guid>https://lobste.rs/s/zcgvtz</guid>
+      <author>runjs.app via thev</author>
+      <pubDate>Fri, 21 Aug 2026 07:03:04 -0500</pubDate>
+      <comments>https://lobste.rs/s/zcgvtz/music_theory_for_programmers</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/zcgvtz/music_theory_for_programmers"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>math</category>
+      <category>art</category>
+    </item>
+    <item>
+      <title>Announcing Rust 1.98.0</title>
+      <link>https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/</link>
+      <guid>https://lobste.rs/s/hbjeir</guid>
+      <author>blog.rust-lang.org via FedericoSchonborn</author>
+      <pubDate>Thu, 20 Aug 2026 19:38:21 -0500</pubDate>
+      <comments>https://lobste.rs/s/hbjeir/announcing_rust_1_98_0</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/hbjeir/announcing_rust_1_98_0"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>release</category>
+      <category>rust</category>
+    </item>
+    <item>
+      <title>rust-glancer: An alternative LSP for Rust with focus on low memory usage</title>
+      <link>https://rust-glancer.github.io/blog/hello-world/</link>
+      <guid>https://lobste.rs/s/am0xtj</guid>
+      <author>rust-glancer.github.io via heavyrain266</author>
+      <pubDate>Fri, 21 Aug 2026 09:29:38 -0500</pubDate>
+      <comments>https://lobste.rs/s/am0xtj/rust_glancer_alternative_lsp_for_rust</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/am0xtj/rust_glancer_alternative_lsp_for_rust"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>rust</category>
+      <category>vibecoding</category>
+    </item>
+    <item>
+      <title>Small, native web tricks worth remembering</title>
+      <link>https://htmlcat.net</link>
+      <guid>https://lobste.rs/s/5mlinc</guid>
+      <author>htmlcat.net via elijahpotter</author>
+      <pubDate>Fri, 21 Aug 2026 09:32:54 -0500</pubDate>
+      <comments>https://lobste.rs/s/5mlinc/small_native_web_tricks_worth</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/5mlinc/small_native_web_tricks_worth"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>web</category>
+    </item>
+    <item>
+      <title>What are you doing this weekend?</title>
+      <link>https://lobste.rs/s/ittn74/what_are_you_doing_this_weekend</link>
+      <guid>https://lobste.rs/s/ittn74</guid>
+      <author> by caius</author>
+      <pubDate>Fri, 21 Aug 2026 06:47:03 -0500</pubDate>
+      <comments>https://lobste.rs/s/ittn74/what_are_you_doing_this_weekend</comments>
+      <description>&lt;p&gt;Feel free to tell what you plan on doing this weekend and even ask for help or feedback.&lt;/p&gt;
+&lt;p&gt;Please keep in mind it’s more than OK to do nothing at all too!&lt;/p&gt;
+</description>
+      <category>programming</category>
+      <category>ask</category>
+    </item>
+    <item>
+      <title>Homebrew 68K Machine Has A PCI Bus</title>
+      <link>https://hackaday.com/2026/08/20/homebrew-68k-machine-has-a-pci-bus/</link>
+      <guid>https://lobste.rs/s/zstki6</guid>
+      <author>hackaday.com via hoistbypetard</author>
+      <pubDate>Fri, 21 Aug 2026 15:24:46 -0500</pubDate>
+      <comments>https://lobste.rs/s/zstki6/homebrew_68k_machine_has_pci_bus</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/zstki6/homebrew_68k_machine_has_pci_bus"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>retrocomputing</category>
+    </item>
+    <item>
+      <title>Data races and the memory model in Go</title>
+      <link>https://func25.dev/posts/go-memory-visibility/</link>
+      <guid>https://lobste.rs/s/chhsuf</guid>
+      <author>func25.dev by func25</author>
+      <pubDate>Fri, 21 Aug 2026 08:11:08 -0500</pubDate>
+      <comments>https://lobste.rs/s/chhsuf/data_races_memory_model_go</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/chhsuf/data_races_memory_model_go"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Everyone Says Assembly Is Untyped—Everyone Is Wrong</title>
+      <link>https://www.gingerbill.org/article/2026/08/20/designing-odins-inline-asm/</link>
+      <guid>https://lobste.rs/s/wphnca</guid>
+      <author>gingerbill.org via rrampage</author>
+      <pubDate>Thu, 20 Aug 2026 12:22:35 -0500</pubDate>
+      <comments>https://lobste.rs/s/wphnca/everyone_says_assembly_is_untyped</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/wphnca/everyone_says_assembly_is_untyped"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>assembly</category>
+      <category>plt</category>
+    </item>
+    <item>
+      <title>The road to ACID transactions in Cassandra 6</title>
+      <link>https://theconsensus.dev/p/2026/08/16/transactions-in-cassandra.html</link>
+      <guid>https://lobste.rs/s/c9xng0</guid>
+      <author>theconsensus.dev by eatonphil</author>
+      <pubDate>Fri, 21 Aug 2026 07:08:34 -0500</pubDate>
+      <comments>https://lobste.rs/s/c9xng0/road_acid_transactions_cassandra_6</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/c9xng0/road_acid_transactions_cassandra_6"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>databases</category>
+      <category>java</category>
+      <category>distributed</category>
+    </item>
+    <item>
+      <title>Bun 1.4</title>
+      <link>https://bun.com/blog/bun-v1.4</link>
+      <guid>https://lobste.rs/s/eesu8d</guid>
+      <author>bun.com via simonw</author>
+      <pubDate>Thu, 20 Aug 2026 09:37:52 -0500</pubDate>
+      <comments>https://lobste.rs/s/eesu8d/bun_1_4</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/eesu8d/bun_1_4"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>javascript</category>
+      <category>vibecoding</category>
+    </item>
+    <item>
+      <title>How a joke domain purchase turned into geopolitical warfare</title>
+      <link>https://sprocketfox.io/xssfox/2026/08/19/sondehub-and-war/</link>
+      <guid>https://lobste.rs/s/sfi9te</guid>
+      <author>sprocketfox.io via zzkt</author>
+      <pubDate>Thu, 20 Aug 2026 07:21:41 -0500</pubDate>
+      <comments>https://lobste.rs/s/sfi9te/how_joke_domain_purchase_turned_into</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/sfi9te/how_joke_domain_purchase_turned_into"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>security</category>
+    </item>
+    <item>
+      <title>Unfortunately you sometimes need to do the thing</title>
+      <link>https://griffinberlste.in/blog/do-the-thing/</link>
+      <guid>https://lobste.rs/s/ry92nr</guid>
+      <author>griffinberlste.in via pgn</author>
+      <pubDate>Fri, 21 Aug 2026 11:15:41 -0500</pubDate>
+      <comments>https://lobste.rs/s/ry92nr/unfortunately_you_sometimes_need_do</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/ry92nr/unfortunately_you_sometimes_need_do"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>philosophy</category>
+      <category>programming</category>
+      <category>rust</category>
+    </item>
+    <item>
+      <title>Bazzite Deck 44 Launches Today</title>
+      <link>https://universal-blue.discourse.group/t/bazzites-biggest-update-deck-44-has-launched-happy-birthday-to-universal-blue/12373</link>
+      <guid>https://lobste.rs/s/dxjbaj</guid>
+      <author>universal-blue.discourse.group via kwas</author>
+      <pubDate>Fri, 21 Aug 2026 05:37:21 -0500</pubDate>
+      <comments>https://lobste.rs/s/dxjbaj/bazzite_deck_44_launches_today</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/dxjbaj/bazzite_deck_44_launches_today"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>linux</category>
+      <category>release</category>
+    </item>
+    <item>
+      <title>Exim 4.100 released</title>
+      <link>https://lists.exim.org/lurker/message/20260820.154633.91995f73.en.html</link>
+      <guid>https://lobste.rs/s/pdx6jg</guid>
+      <author>lists.exim.org via fanf</author>
+      <pubDate>Fri, 21 Aug 2026 15:54:08 -0500</pubDate>
+      <comments>https://lobste.rs/s/pdx6jg/exim_4_100_released</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/pdx6jg/exim_4_100_released"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>release</category>
+    </item>
+    <item>
+      <title>Zero-Knowledge Proof of Wasta with Applications in Lebanon</title>
+      <link>https://eprint.gacr.info/2025/003.pdf</link>
+      <guid>https://lobste.rs/s/gwktul</guid>
+      <author>eprint.gacr.info via nrposner</author>
+      <pubDate>Fri, 21 Aug 2026 16:16:52 -0500</pubDate>
+      <comments>https://lobste.rs/s/gwktul/zero_knowledge_proof_wasta_with</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/gwktul/zero_knowledge_proof_wasta_with"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>pdf</category>
+      <category>satire</category>
+      <category>cryptography</category>
+    </item>
+    <item>
+      <title>Supply chain attack on arrayref</title>
+      <link>https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/</link>
+      <guid>https://lobste.rs/s/dns8du</guid>
+      <author>blog.rust-lang.org via ohrv</author>
+      <pubDate>Thu, 20 Aug 2026 04:54:06 -0500</pubDate>
+      <comments>https://lobste.rs/s/dns8du/supply_chain_attack_on_arrayref</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/dns8du/supply_chain_attack_on_arrayref"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>security</category>
+      <category>rust</category>
+    </item>
+    <item>
+      <title>Vibe coding personal apps in mid-2026</title>
+      <link>https://www.flourish.org/2026/08/personal-apps/</link>
+      <guid>https://lobste.rs/s/vvdveb</guid>
+      <author>flourish.org via amirouche</author>
+      <pubDate>Fri, 21 Aug 2026 02:16:33 -0500</pubDate>
+      <comments>https://lobste.rs/s/vvdveb/vibe_coding_personal_apps_mid_2026</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/vvdveb/vibe_coding_personal_apps_mid_2026"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>vibecoding</category>
+    </item>
+    <item>
+      <title>The Atproto Spaces Alpha is Live</title>
+      <link>https://atproto.com/blog/atproto-spaces-alpha</link>
+      <guid>https://lobste.rs/s/faggqv</guid>
+      <author>atproto.com via srxl</author>
+      <pubDate>Fri, 21 Aug 2026 07:32:51 -0500</pubDate>
+      <comments>https://lobste.rs/s/faggqv/atproto_spaces_alpha_is_live</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/faggqv/atproto_spaces_alpha_is_live"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>release</category>
+      <category>distributed</category>
+    </item>
+    <item>
+      <title>Zero-Knowledge Proofs Aren’t Age Verification Silver Bullets</title>
+      <link>https://www.eff.org/deeplinks/2026/08/zkps-arent-age-verification-silver-bullets</link>
+      <guid>https://lobste.rs/s/yigyaq</guid>
+      <author>eff.org via jana</author>
+      <pubDate>Thu, 20 Aug 2026 15:48:12 -0500</pubDate>
+      <comments>https://lobste.rs/s/yigyaq/zero_knowledge_proofs_aren_t_age</comments>
+      <description>&lt;p&gt;&lt;a href="https://lobste.rs/s/yigyaq/zero_knowledge_proofs_aren_t_age"&gt;Comments&lt;/a&gt;&lt;/p&gt;</description>
+      <category>privacy</category>
+      <category>cryptography</category>
+    </item>
+  </channel>
+</rss>

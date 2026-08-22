@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+    <channel>
+        <title>Ars Technica - All content</title>
+        <atom:link href="https://arstechnica.com/feed/" rel="self" type="application/rss+xml"/>
+        <link>https://arstechnica.com</link>
+        <description>All Ars Technica stories</description>
+        <lastBuildDate>Fri, 21 Aug 2026 23:42:51 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>
+            hourly        </sy:updatePeriod>
+        <sy:updateFrequency>
+            1        </sy:updateFrequency>
+        
+<image>
+	<url>https://cdn.arstechnica.net/wp-content/uploads/2016/10/cropped-ars-logo-512_480-60x60.png</url>
+	<title>Ars Technica</title>
+	<link>https://arstechnica.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+            <item>
+                <title>Trump's space transportation policy calls for new spaceport on federal land</title>
+                <link>https://arstechnica.com/space/2026/08/trump-admin-calls-for-more-spaceports-to-handle-surge-in-launches/</link>
+                                    <comments>https://arstechnica.com/space/2026/08/trump-admin-calls-for-more-spaceports-to-handle-surge-in-launches/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 23:32:17 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[Commercial space]]></category>
+		<category><![CDATA[launch]]></category>
+		<category><![CDATA[military space]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[space policy]]></category>
+		<category><![CDATA[spaceport]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/08/trump-admin-calls-for-more-spaceports-to-handle-surge-in-launches/</guid>
+
+                                    <description>
+                        <![CDATA["We probably need another site that's capable of heavy and super heavy launch capability."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>A new national space transportation policy signed by President Donald Trump on Thursday calls for the development of more spaceports to support more than 1,000 launches and reentries per year by 2030.</p>
+<p>The presidential memorandum replaces a 2013 policy signed by former President Barack Obama. Both policies share an emphasis on supporting the commercial space industry and underscore the importance of assured access to space. But the launch sector has changed immensely since then. There were 176 orbital launch attempts from US soil last year, nearly 10 times the number in 2013. SpaceX led the pack last year with 165 orbital launches of its Falcon 9 rocket, plus five suborbital test flights of the much larger Starship.</p>
+<p>"By 2030, our space transportation ranges must grow to support more than 1,000 launches and reentries every year," the policy says. "The policies set forth in this memorandum will secure America's continued superiority in space."</p><p><a href="https://arstechnica.com/space/2026/08/trump-admin-calls-for-more-spaceports-to-handle-surge-in-launches/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/08/trump-admin-calls-for-more-spaceports-to-handle-surge-in-launches/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>10</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/9315875-1152x648-1787353404.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/9315875-500x500.jpg" width="500"/>
+<media:credit>US Space Force/Robert Mason</media:credit><media:text>A Falcon 9 booster returns to Cape Canaveral Space Force Station, Florida, for landing after sending a commercial cargo mission toward the International Space Station in September 2025.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Thunder + fiber-optic cabling used for seismic imaging</title>
+                <link>https://arstechnica.com/science/2026/08/researchers-use-thunderquakes-to-study-structure-of-earths-surface/</link>
+                                    <comments>https://arstechnica.com/science/2026/08/researchers-use-thunderquakes-to-study-structure-of-earths-surface/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[John Timmer]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 20:26:46 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[atmospheric science]]></category>
+		<category><![CDATA[Earth sciences]]></category>
+		<category><![CDATA[seismology]]></category>
+		<category><![CDATA[thunder]]></category>
+		<category><![CDATA[thunderquake]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/08/researchers-use-thunderquakes-to-study-structure-of-earths-surface/</guid>
+
+                                    <description>
+                        <![CDATA[Thunderstorms make seismic waves that can be used to find sub-surface features.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Most of what we know about the Earth's interior comes from observing seismic waves. These travel at somewhat different speeds depending on the details of the rock they're moving through—whether it's solid or semi-molten, how much water is present, whether it's fractured or solid material, and so on. Get enough data from enough seismic events, and you can start piecing together a picture of what's present at different depths below the surface.</p>
+<p>In many cases, we can get this data from naturally occurring events like earthquakes. In others, we intentionally create waves using things like explosives, providing the opportunity to do imaging in specific areas without needing to wait for an earthquake. Now, a team of scientists at Penn State suggests there's a potential option that sits between waiting for an earthquake and triggering your own seismic event: thunderstorms.</p>
+<p>Some of the energy carried by thunder enters the Earth's upper crust, triggering what are termed "thunderquakes." But, for various physical reasons, the seismic signals are extremely complex, making it difficult to extract clear signals from them. The Penn State team says it has finally constructed a model that can help make sense of this complexity and used it to reconstruct the terrain under the local campus.</p><p><a href="https://arstechnica.com/science/2026/08/researchers-use-thunderquakes-to-study-structure-of-earths-surface/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/08/researchers-use-thunderquakes-to-study-structure-of-earths-surface/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>7</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-173019376-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-173019376-500x500.jpg" width="500"/>
+<media:credit>Nature247</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Hidden Zillow listings created fake supply shock, raising NYC rents, lawsuit says</title>
+                <link>https://arstechnica.com/tech-policy/2026/08/class-action-accuses-brokers-of-hiding-zillow-listings-driving-up-nyc-rents/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/08/class-action-accuses-brokers-of-hiding-zillow-listings-driving-up-nyc-rents/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 20:10:50 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[real estate]]></category>
+		<category><![CDATA[Zillow]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/class-action-accuses-brokers-of-hiding-zillow-listings-driving-up-nyc-rents/</guid>
+
+                                    <description>
+                        <![CDATA[Renters say hidden Zillow listings make it harder to afford living in New York City.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>This week, two New York City renters filed a <a href="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Castaneda-v-Compass-Complaint-8-19-26.pdf">class action complaint</a> alleging that a brokerage business called Compass—which has been <a href="https://arstechnica.com/tech-policy/2026/05/zillow-loses-access-to-thousands-of-home-listings-amid-bitter-legal-feud/">boycotting posting listings on free digital platforms like Zillow</a>—has now delisted so many rental units that it has created a fake supply shock that is artificially raising rents.</p>
+<p>According to plaintiffs, Peter Castaneda and Haley Gelfand, Compass has bought so many brokerage firms over the past decade-plus that it maintains a monopoly, controlling “over 80 percent of the rental unit listings available for renters in Manhattan based on 2025 data.”</p>
+<p>With that monopoly, Compass can “literally dictate pricing for as much as 80 percent of Manhattan’s rental units,” renters argued. And now, Compass is allegedly trying to manipulate prices on other platforms, as well.</p><p><a href="https://arstechnica.com/tech-policy/2026/08/class-action-accuses-brokers-of-hiding-zillow-listings-driving-up-nyc-rents/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/08/class-action-accuses-brokers-of-hiding-zillow-listings-driving-up-nyc-rents/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>61</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-922788110-1152x648-1787340488.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-922788110-500x500-1787340469.jpg" width="500"/>
+<media:credit>Busà Photography | Moment</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Motorola's GrapheneOS phones will launch in 2027 priced higher than Pixels</title>
+                <link>https://arstechnica.com/gadgets/2026/08/motorolas-grapheneos-phones-will-launch-in-2027-priced-higher-than-pixels/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/08/motorolas-grapheneos-phones-will-launch-in-2027-priced-higher-than-pixels/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ryan Whitwam]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 19:32:29 +0000</pubDate>
+                		<category><![CDATA[Google]]></category>
+		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[grapheneos]]></category>
+		<category><![CDATA[privacy]]></category>
+		<category><![CDATA[smartphones]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/08/motorolas-grapheneos-phones-will-launch-in-2027-priced-higher-than-pixels/</guid>
+
+                                    <description>
+                        <![CDATA[The private Android-based OS will expand beyond Pixels next year.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Several months ago, Motorola and the makers of GrapheneOS <a href="https://motorolanews.com/motorola-three-new-b2b-solutions-at-mwc-2026/">announced</a> a team-up that would expand support for the privacy-centric OS to beyond Google's Pixel phones. The announcement, however, was bereft of details. Now, the creators of the OS have taken to Mastodon (naturally) to provide <a href="https://grapheneos.social/@GrapheneOS/117078064184215730">an update</a>. Moto's GrapheneOS phones are on track to launch in 2027, but they'll cost a pretty penny.</p>
+<p>The upcoming Moto devices won't ship with GrapheneOS, but they will be fully supported by the project with help from Moto itself. So far, only Pixel phones have met GrapheneOS's strict hardware requirements to ensure the highest level of security and privacy. The software, which is based on Android, includes features like enhanced memory protection, granular network permissions, customizable app sandboxing, and a duress code that can be used to wipe your phone. (That last one got an activist <a href="https://arstechnica.com/gadgets/2026/07/activist-charged-with-felony-after-giving-border-agent-duress-code-that-wiped-his-phone/">charged with a felony</a> earlier this year after he used it to delete his data during a customs interrogation.)</p>
+<p>According to the GrapheneOS team, the upcoming Moto phones will be premium flagship devices. The team expects pricing to be even higher than Pixel phones, which is saying something. The <a href="https://arstechnica.com/gadgets/2026/08/google-pixel-11-series-review-is-the-magic-fading/">current Pixel lineup</a> starts at $900 for the base model Pixel 11, a $100 increase from last year. The Pixel 11 Pro XL price has gone up to a whopping $1,300 this year.</p><p><a href="https://arstechnica.com/gadgets/2026/08/motorolas-grapheneos-phones-will-launch-in-2027-priced-higher-than-pixels/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/08/motorolas-grapheneos-phones-will-launch-in-2027-priced-higher-than-pixels/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>41</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Motorola-X-GrapheneOS-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Motorola-X-GrapheneOS-500x500.jpg" width="500"/>
+<media:credit>Motorola</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Lawsuit demands Logitech hand tariff refunds over to customers</title>
+                <link>https://arstechnica.com/tech-policy/2026/08/lawsuit-demands-logitech-hand-tariff-refunds-over-to-customers/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/08/lawsuit-demands-logitech-hand-tariff-refunds-over-to-customers/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Scharon Harding]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 19:04:41 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[class action]]></category>
+		<category><![CDATA[lawsuit]]></category>
+		<category><![CDATA[Logitech]]></category>
+		<category><![CDATA[tariffs]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/lawsuit-demands-logitech-hand-tariff-refunds-over-to-customers/</guid>
+
+                                    <description>
+                        <![CDATA[Logitech increased prices by up to 25 percent last year. ]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Logitech is facing a proposed class action lawsuit for not giving customers tariff refunds.</p>
+<p>In April 2025, <a href="https://arstechnica.com/gadgets/2025/04/looming-tariffs-are-making-it-extra-hard-to-be-a-tech-geek/">Logitech raised the prices</a> on 51 percent of its portfolio, with some prices increasing by as much as 25 percent.</p>
+<p>The <a href="https://www.cpmlegal.com/media/matter/60049_2026-08-18_1_%20Tariffs%20-%20Logitech%20Class%20Action%20Complaint.pdf">complaint</a> seeks to “recover monies that Logitech extracted from American consumers as offset for import tariffs that the United States Supreme Court has since declared unlawful, tariffs for which Logitech now stands to be reimbursed by the federal government. This is all while Logitech retained every dollar of the corresponding price increases it charged its customers due to the illegal tariffs.”</p><p><a href="https://arstechnica.com/tech-policy/2026/08/lawsuit-demands-logitech-hand-tariff-refunds-over-to-customers/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/08/lawsuit-demands-logitech-hand-tariff-refunds-over-to-customers/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>56</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/mx-master-4-graphite-lifestyle-gallery-4-new-1088x648.jpg" width="1088">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/mx-master-4-graphite-lifestyle-gallery-4-new-500x500.jpg" width="500"/>
+<media:credit>Logitech</media:credit><media:text>A Logitech MX Master 4 mouse.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Chinese regulators tell Tesla to fix nearly 3 million cars</title>
+                <link>https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/</link>
+                                    <comments>https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 18:07:15 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/</guid>
+
+                                    <description>
+                        <![CDATA[Chinese safety regulators have cracked down on doors that don't open in a crash.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Tesla is facing a massive recall in China today. Chinese regulators are taking a stricter approach to safety, and the automaker now has to add warning labels to 2.98 million Model 3 and Model Y electric vehicles in China that make it clearer how to open the rear doors in the case of an emergency that causes the car to lose power.</p>
+<p>As <a href="https://arstechnica.com/cars/2026/02/china-bans-all-retractable-car-door-handles-starting-next-year/">we learned earlier this year</a>, Chinese regulators are getting more serious about the recent trend of electronically controlled car doors; a growing number of crashes have had fatal consequences when the occupants have been trapped in burning cars. Starting next year, new rules give specific dimensions for handles that must be followed by all newly approved vehicles. But cars that have already been on sale for some time, like the Models 3 and Y, are grandfathered in, at least until the end of 2028.</p>
+<p>But China wants Tesla to do something about the nearly 3 million cars already on its roads. It is requiring the automaker to add warning labels to the car interiors—something that will require physical access to the car. Additionally, Tesla will push out a software update that automatically lowers all the cars' windows in the event of a collision.</p><p><a href="https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>82</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2290777035-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2290777035-500x500.jpg" width="500"/>
+<media:credit>Andrey Rudakov/Bloomberg via Getty Images</media:credit><media:text>A Tesla interior door button.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Fighter jets help destroy Russian drone boat near European offshore gas platform</title>
+                <link>https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jeremy Hsu]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 16:48:59 +0000</pubDate>
+                		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[drone boats]]></category>
+		<category><![CDATA[drones]]></category>
+		<category><![CDATA[europe]]></category>
+		<category><![CDATA[military drones]]></category>
+		<category><![CDATA[Nato]]></category>
+		<category><![CDATA[Romania]]></category>
+		<category><![CDATA[russia]]></category>
+		<category><![CDATA[Russia invasion of Ukraine]]></category>
+		<category><![CDATA[Russia war on Ukraine]]></category>
+		<category><![CDATA[Russian invasion of Ukraine]]></category>
+		<category><![CDATA[Russian war on Ukraine]]></category>
+		<category><![CDATA[Ukraine]]></category>
+		<category><![CDATA[Ukraine war]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/</guid>
+
+                                    <description>
+                        <![CDATA[Romania blew up drone boat to protect lives of several hundred rig workers.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>This week, Romania accused Russia of sending a drone boat loaded with explosives to a vital European natural gas platform in the Black Sea. A Romanian F-16 fighter jet used its cannons to disable the surface drone so that explosive ordnance experts could blow it up safely.</p>
+<p>On August 20, the Romanian Coast Guard first spotted the maritime drone a few hundred meters away from the <a href="https://www.omvpetrom.com/en/about-us/what-we-do/our-projects/neptun-deep">Neptun Deep</a> project’s main drilling platform, where several hundred workers were busy with the platform’s ongoing installation, Defense Minister Radu Miruță said in a <a href="https://www.facebook.com/share/p/1BtvfU9gsw/">Facebook post</a>. The offshore gas project would make Romania the largest gas producer in the European Union once it starts full production in 2027.</p>
+<p>To protect the lives of the workers and the offshore gas infrastructure, the Romanian military scrambled two F-16 fighter jets to stop the drone with cannon fire, Miruță said. Army specialists later carried out a controlled detonation, as seen in a <a href="https://www.facebook.com/share/v/1CMCVsSRRc/">Facebook video</a> shared by the defense minister.</p><p><a href="https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>63</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Russian-drone-boat-1152x648.jpeg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Russian-drone-boat-500x500.jpeg" width="500"/>
+<media:credit>Romanian Ministry of Defense</media:credit><media:text>A drone boat loaded with explosives found near Romania's Neptun Deep gas project in the Black Sea. </media:text></media:content>
+            </item>
+                    <item>
+                <title>Personalized pricing is “abhorrent,” but FTC limits may increase costs, critics say</title>
+                <link>https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 16:38:25 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[data privacy]]></category>
+		<category><![CDATA[federal trade commission]]></category>
+		<category><![CDATA[FTC]]></category>
+		<category><![CDATA[online pricing]]></category>
+		<category><![CDATA[online privacy]]></category>
+		<category><![CDATA[personalized pricing]]></category>
+		<category><![CDATA[surveillance pricing]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/</guid>
+
+                                    <description>
+                        <![CDATA[Some Americans fear the FTC may be thinking about personalized pricing all wrong.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Some Americans worry that the Federal Trade Commission's rush to limit personalized pricing in the name of consumer protection could end up killing discounts they depend on or, counterintuitively, raising prices.</p>
+<p>The FTC has no power to ban personalized pricing, in which a business uses a customer’s personal data to determine the highest price that person might be willing to pay for a product or service. But the agency believes it could set limits on the practice, including potential penalties for businesses that fail to disclose when customers may be paying more because data suggests they won't balk at the price.</p>
+<p>In a <a href="https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-seeks-comment-enforcement-policy-statement-regarding-personalized-pricing">request for public comment</a> on a proposed policy statement, the FTC acknowledged that personalized pricing is common in some industries. But FTC Chair Andrew Ferguson said new industries are increasingly tracking customers to set individualized prices, blindsiding consumers who expect a listed price in markets like retail “to be the same price that everyone else sees,” Ferguson said.</p><p><a href="https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>82</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2278328918-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2278328918-500x500.jpg" width="500"/>
+<media:credit>Andrew Harnik / Staff | Getty Images News</media:credit><media:text>FTC chair Andrew Ferguson wants to put businesses engaged in personalized pricing "on notice."</media:text></media:content>
+            </item>
+                    <item>
+                <title>Waymo doubles spending on lobbying in robotaxi battle with Uber</title>
+                <link>https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/</link>
+                                    <comments>https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Rafe Rosner Uddin and Michael Taffe, Financial Times ]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 13:11:35 +0000</pubDate>
+                		<category><![CDATA[Biz & IT]]></category>
+		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[robotaxi]]></category>
+		<category><![CDATA[syndication]]></category>
+		<category><![CDATA[Uber]]></category>
+		<category><![CDATA[waymo]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/</guid>
+
+                                    <description>
+                        <![CDATA[Alphabet-owned company is seeking to persuade US regulators to clear a path for fully autonomous taxi services.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Waymo has sharply increased its lobbying spending as it seeks to persuade US regulators to clear a path for fully autonomous taxi services, intensifying its battle with rival Uber over the future of robotaxis.</p>
+<p>The Alphabet-owned company spent more than $1 million between April and June on lobbying the federal government, more than double its outlay a year earlier, according to filings. That put Waymo’s spending close to Uber’s and well ahead of rivals including Amazon’s Zoox and Tesla.</p>
+<p>The rise in lobbying comes as Waymo and Uber push competing visions for the future of ride-hailing. Waymo wants a faster route to fully driverless commercial services, while Uber is advocating a staggered rollout in which robotaxis operate alongside human drivers.</p><p><a href="https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>63</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/ftcms_8bad1114-5b27-4fc9-8102-1cb63e7f76fb-1152x648.jpeg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/ftcms_8bad1114-5b27-4fc9-8102-1cb63e7f76fb-500x500.jpeg" width="500"/>
+<media:credit>Alex Kent, Bloomberg</media:credit></media:content>
+            </item>
+                    <item>
+                <title>As demand for Meta AI glasses explodes, it’s harder to avoid creepy recordings</title>
+                <link>https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 11:00:53 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Features]]></category>
+		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[ai glasses]]></category>
+		<category><![CDATA[meta]]></category>
+		<category><![CDATA[online privacy]]></category>
+		<category><![CDATA[smart glasses]]></category>
+		<category><![CDATA[Video Recording]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/</guid>
+
+                                    <description>
+                        <![CDATA[Ars looks at Zuckoff, the latest free app detecting Meta AI glasses amid privacy backlash.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Can you tell when someone nearby is wearing Meta AI glasses?</p>
+<p>As millions of people buy into the smart glasses fad each year, the odds are increasing that you could be secretly recorded while simply going about your day.</p>
+<p>Meta is not the only smart glasses maker, but its AI glasses are by far the most popular. And as the devices become more common, some public places, including schools, courts, restaurants, and entertainment venues, have begun to ban them. Even tech lovers have rejected Meta glasses in certain settings. The hackers behind DEF CON 2026 <a href="https://www.theregister.com/security/2026/07/28/def-con-bans-meta-style-pervert-glasses/5279763">reportedly</a> banned smart glasses with no exceptions, reminding attendees with prescription pairs to “be sure to pack non-violating eyewear if you need them.”</p><p><a href="https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>307</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/zuckoff-glasshole-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/zuckoff-glasshole-500x500.jpg" width="500"/>
+<media:credit>Aurich Lawson | Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Rocket Report: SpaceX makes its mark on the Moon; ULA names new boss</title>
+                <link>https://arstechnica.com/space/2026/08/rocket-report-spacex-makes-a-mark-on-the-moon-ula-names-new-boss/</link>
+                                    <comments>https://arstechnica.com/space/2026/08/rocket-report-spacex-makes-a-mark-on-the-moon-ula-names-new-boss/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Fri, 21 Aug 2026 11:00:36 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[china]]></category>
+		<category><![CDATA[Commercial space]]></category>
+		<category><![CDATA[falcon 9]]></category>
+		<category><![CDATA[launch]]></category>
+		<category><![CDATA[long march-5]]></category>
+		<category><![CDATA[reusable rocket]]></category>
+		<category><![CDATA[rocket report]]></category>
+		<category><![CDATA[russia]]></category>
+		<category><![CDATA[South Korea]]></category>
+		<category><![CDATA[soyuz]]></category>
+		<category><![CDATA[spacex]]></category>
+		<category><![CDATA[starship]]></category>
+		<category><![CDATA[Taiwan]]></category>
+		<category><![CDATA[Ukraine]]></category>
+		<category><![CDATA[united launch alliance]]></category>
+		<category><![CDATA[vulcan]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/08/rocket-report-spacex-makes-a-mark-on-the-moon-ula-names-new-boss/</guid>
+
+                                    <description>
+                        <![CDATA[Taiwan's effort to develop its own satellite launcher hit a setback this week.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Welcome to Edition 9.07 of the Rocket Report! China's workhorse Long March rocket family appears to be rebounding quickly from a rare launch failure August 10. Chinese officials have not publicly released any information on what may have caused the Long March 7A rocket to break apart less than 90 seconds after liftoff, but the rocket's use of YF-100 engines initially raised questions about the failure's impact on other Chinese rockets that use the same type of engines. But no biggie. YF-100 engines returned to flight six days later with the successful flight of a Long March 12 rocket, and the heavy-lift Long March 5—also with YF-100 engines—is set to launch in a few days with one of China's most important space missions of the decade: the Chang'e 7 lunar lander en route to the Moon's south pole.</p>
+<p>As always, we <a href="https://arstechnica.wufoo.com/forms/launch-stories/">welcome reader submissions</a>. If you don't want to miss an issue, please subscribe using the box below (the form will not appear on AMP-enabled versions of the site). Each report will include information on small-, medium-, and heavy-lift rockets, as well as a quick look ahead at the next three launches on the calendar.</p>
+<figure class="ars-img-shortcode id-1314289 align-center">
+    <div>
+                        <img decoding="async" width="560" height="81" src="https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll.png" class="center full" alt="" srcset="https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll.png 560w, https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll-300x43.png 300w" sizes="(max-width: 560px) 100vw, 560px">
+                  </div>
+      </figure>
+
+<p><b>Trouble in Taiwan. </b>A prototype for a future satellite launch vehicle developed by Taiwan's top weapons manufacturer veered off course shortly after liftoff Wednesday, Taiwan's <a href="https://www.cna.com.tw/news/aipl/202608200239.aspx">Central News Agency reports</a>. The "trajectory anomaly" prompted the activation of the rocket's self-destruct mechanism. The government agency responsible for the test flight, the National <a id="mwGw" title="Sun Yat-sen" href="https://en.wikipedia.org/wiki/Sun_Yat-sen" rel="mw:WikiLink">Chung-Shan</a> Institute of Science and Technology (NCSIST), reported no injuries or property damage. Debris from the rocket fell into a planned safety control zone near the southern tip of Taiwan.</p><p><a href="https://arstechnica.com/space/2026/08/rocket-report-spacex-makes-a-mark-on-the-moon-ula-names-new-boss/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/08/rocket-report-spacex-makes-a-mark-on-the-moon-ula-names-new-boss/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>66</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/04_4panel_enlarge_2x-1152x648-1787265662.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/04_4panel_enlarge_2x-500x500.jpg" width="500"/>
+<media:credit>NASA/Goddard Space Flight Center/Intuitive Machines</media:credit><media:text>NASA's Lunar Reconnaissance Orbiter captured this view of a fresh crater created August 5 by the impact of a Falcon 9 upper stage on the Moon.</media:text></media:content>
+            </item>
+                    <item>
+                <title>US distributor of China’s most popular humanoid robots pivots after US ban</title>
+                <link>https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jeremy Hsu]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 22:00:11 +0000</pubDate>
+                		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[humanoid robots]]></category>
+		<category><![CDATA[Industrial robots]]></category>
+		<category><![CDATA[medical robots]]></category>
+		<category><![CDATA[Robo Inc.]]></category>
+		<category><![CDATA[RoboStore]]></category>
+		<category><![CDATA[Robotics]]></category>
+		<category><![CDATA[robots]]></category>
+		<category><![CDATA[Unitree Robotics]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban/</guid>
+
+                                    <description>
+                        <![CDATA[FCC ban on foreign-made robots accelerated RoboStore’s US manufacturing plans.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>A leading US distributor of China’s most popular humanoid robots and robot dogs now plans to produce its own robots at a facility on Long Island, New York. The business pivot comes amid the US government’s growing crackdown on foreign-made robots.</p>
+<p>The company, RoboStore, had previously become the main North American distributor for humanoid robots and quadruped robots from Unitree Robotics, a Chinese robotics company that produces some of the most affordable and popular humanoid robot models. Universities like Harvard and MIT, along with tech companies like Amazon and Nvidia, purchased such robots made in China through RoboStore for their own research and development purposes.</p>
+<p>“We’ve sold over 1,500 robots and deployed them and worked with customers like Cisco, OpenAI, Nvidia, and over 150 universities,” <a href="https://www.linkedin.com/in/teddy-haggerty-4a950089/">Teddy Haggerty</a>, founder and CEO of RoboStore, told Ars.</p><p><a href="https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>55</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Robo-Inc-1152x648.jpeg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Robo-Inc-500x500.jpeg" width="500"/>
+<media:credit>Robo Inc.</media:credit><media:text>The robotics distributor RoboStore is pivoting from selling China's robots to making its own from a Long Island facility under the new company Robo Inc.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Europe cancels planned upgrades for Ariane 6 rocket</title>
+                <link>https://arstechnica.com/space/2026/08/europe-cancels-planned-upgrades-for-ariane-6-rocket/</link>
+                                    <comments>https://arstechnica.com/space/2026/08/europe-cancels-planned-upgrades-for-ariane-6-rocket/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 21:40:52 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[ariane 6]]></category>
+		<category><![CDATA[Future]]></category>
+		<category><![CDATA[rockets]]></category>
+		<category><![CDATA[space]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/08/europe-cancels-planned-upgrades-for-ariane-6-rocket/</guid>
+
+                                    <description>
+                        <![CDATA[Arianespace hasn’t publicly disclosed the cost for an Ariane 6 launch.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>In the two years since it made a largely successful debut, Europe's Ariane 6 rocket has launched eight missions, all of which reached orbit safely.</p>
+<p>The large, expendable rocket has a capacity of more than 20 metric tons to low-Earth orbit. And to the credit of European rocket scientists and planners, the Ariane 6 has had a substantially smoother rollout than comparable vehicles in the United States—Blue Origin's New Glenn and United Launch Alliance's Vulcan rockets—both of which have had significant growing pains.</p>
+<p>However, even though the Ariane 6 rocket has had a successful debut, its future is clouded by high costs.</p><p><a href="https://arstechnica.com/space/2026/08/europe-cancels-planned-upgrades-for-ariane-6-rocket/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/08/europe-cancels-planned-upgrades-for-ariane-6-rocket/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>149</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2025/03/GlYHDKoWQAAxQiG-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2025/03/GlYHDKoWQAAxQiG-500x500.jpg" width="500"/>
+<media:credit>ESA-CNES-Arianespace-P. Piron</media:credit><media:text>Europe's second Ariane 6 rocket lifts off from the Guiana Space Center with a French military spy satellite.</media:text></media:content>
+            </item>
+                    <item>
+                <title>They survived 9/11; 25 years later, their bonds remain unbroken</title>
+                <link>https://arstechnica.com/culture/2026/08/new-9-11-documentary-finds-hope-in-the-horror/</link>
+                                    <comments>https://arstechnica.com/culture/2026/08/new-9-11-documentary-finds-hope-in-the-horror/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jennifer Ouellette]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 21:25:25 +0000</pubDate>
+                		<category><![CDATA[Culture]]></category>
+		<category><![CDATA[9/11]]></category>
+		<category><![CDATA[disney plus]]></category>
+		<category><![CDATA[documentaries]]></category>
+		<category><![CDATA[History]]></category>
+		<category><![CDATA[Hulu]]></category>
+		<category><![CDATA[National Geographic]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/culture/2026/08/new-9-11-documentary-finds-hope-in-the-horror/</guid>
+
+                                    <description>
+                        <![CDATA[Survivors reconnect with those who saved them in National Geographic's <em>9/11: Reunited</em>.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<div class="ars-video ars-video--horizontal"><div><div class="relative" allow="fullscreen" loading="lazy" src="https://www.youtube.com/embed/T1nVy-puZzU?start=0&amp;wmode=transparent"></div></div></div>
+<p>September 11, 2001, will be remembered as one of the darkest days in American history. As the 25th anniversary approaches, National Geographic, in collaboration with the 9/11 Memorial and Museum, is marking the occasion with a new documentary miniseries: <em>9/11: Reunited</em>. The three-episode series revisits the personal stories of several survivors of the terrorist attacks, with a twist: It reunites people whose paths crossed at that time to celebrate the bonds they formed 25 years ago.</p>
+<p>Director Julian Jones was a producer on NatGeo's Emmy-winning 2021 documentary miniseries <a href="https://en.wikipedia.org/wiki/9/11%3A_One_Day_in_America"><em>9/11: One Day in America</em></a>. The experience inspired him to return to direct <em>9/11: Reunited</em>. "What emerged for me [while making the 2021 documentary] was a sense of people showing up for each other, a selflessness and everyday heroism," Jones told Ars. As the 25th anniversary of the attacks approached, he and National Geographic decided to commemorate the milestone with a documentary series focused on that aspect.</p>
+<p>"We wanted to bring people together to offer gratitude to each other, to answer unanswered questions, to talk about things that maybe they weren't ready to talk about until now, and also to remember their fallen comrades or friends," said Jones. "After 25 years, who do they want to meet? What questions have they got? I think we also wanted to tell the story of what many in the 9/11 community call 9/12, that's the rest of your lives—the journey, and in many cases, the psychological and physical struggles."</p><p><a href="https://arstechnica.com/culture/2026/08/new-9-11-documentary-finds-hope-in-the-horror/">Read full article</a></p>
+<p><a href="https://arstechnica.com/culture/2026/08/new-9-11-documentary-finds-hope-in-the-horror/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>54</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/reunited8-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/reunited8-500x500-1786893438.jpg" width="500"/>
+<media:credit>AP Photo/Mark Lennihan/FILE</media:credit><media:text>Smoke billows from lower Manhattan on September 11, 2001.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Roblox must make changes after failing to block adults creeping on kids</title>
+                <link>https://arstechnica.com/tech-policy/2026/08/weak-roblox-safeguards-failed-to-stop-adults-contacting-kids-regulator-says/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/08/weak-roblox-safeguards-failed-to-stop-adults-contacting-kids-regulator-says/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 17:14:08 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[age checks]]></category>
+		<category><![CDATA[age verification]]></category>
+		<category><![CDATA[australia]]></category>
+		<category><![CDATA[child safety]]></category>
+		<category><![CDATA[roblox]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/weak-roblox-safeguards-failed-to-stop-adults-contacting-kids-regulator-says/</guid>
+
+                                    <description>
+                        <![CDATA[Roblox is first platform to submit to independent audits under the Online Safety Act.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Despite making changes last fall to help <a href="https://www.esafety.gov.au/newsroom/media-releases/roblox-on-notice-over-ongoing-concerns-about-online-child-grooming">block adults from messaging unknown children</a>, Roblox is still failing to stop adults from creeping on kids in other ways, Australia’s eSafety commissioner, Julie Inman Grant, <a href="https://www.esafety.gov.au/newsroom/media-releases/esafety-secures-court-enforceable-undertaking-from-roblox-to-do-more-to-protect-australian-kids-from-grooming-and-sexual-exploitation">said</a> on Thursday.</p>
+<p>Suspecting that Roblox may not be doing enough to stop child exploitation, eSafety conducted testing earlier this year that flagged alarming gaps in Roblox safeguards. The agency found that adult strangers could still send connection requests to kids, whose “profiles and biographies, including account names, number and names of connections, avatar images, and non-sensitive biographical information such as their interests were visible to anyone on the Roblox platform, with no option to restrict the visibility of this information.”</p>
+<p>Such requests did not trigger parental alerts, eSafety found, and bad actors could also search kids’ visible-to-anyone contact lists for more targets.</p><p><a href="https://arstechnica.com/tech-policy/2026/08/weak-roblox-safeguards-failed-to-stop-adults-contacting-kids-regulator-says/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/08/weak-roblox-safeguards-failed-to-stop-adults-contacting-kids-regulator-says/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>81</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2273992483-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2273992483-500x500.jpg" width="500"/>
+<media:credit>SOPA Images / Contributor | LightRocket</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Genesis joins the giant electric SUV club with new GV90</title>
+                <link>https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/</link>
+                                    <comments>https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 14:35:58 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[Genesis GV90]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/</guid>
+
+                                    <description>
+                        <![CDATA[A retractable screen, a huge heads-up display, and an optional 4-seat VIP interior.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>A couple of years ago, Genesis showed us its unique take on the luxury electric SUV with the Neolum concept. The brand's designers know how to draw a handsome shape, particularly using an SUV's proportions, and the clean-lined concept featured a four-seat interior with no B pillar, swiveling front seats, and a thoughtful mix of leather, wool, and even wood. Now Genesis has debuted the production version as its new electric flagship, the GV90. And based on the photos, at least, the process of turning that concept into reality has been a success.</p>
+<p>The GV90 uses the same 800 V E-GMP platform as other Korean electric three-row SUVs, the Hyundai Ioniq 9 and Kia EV9. A three-row, seven-seat GV90 will be part of the range, and I would assume the most common variant we'll encounter on the roads. But for the launch, Genesis is just focusing on the four-seat GV90 and the high-end GV90 Neolum; the latter faithfully translates most of the concept, including the pillarless coach doors (which Genesis is calling the Neolum Arch Gate).</p>
+<figure>
+      <img decoding="async" width="1024" height="768" src="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-1024x768.jpg" class="ars-gallery-image" alt="" loading="lazy" aria-labelledby="caption-2168455" srcset="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-1024x768.jpg 1024w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-640x480.jpg 640w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-768x576.jpg 768w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-1536x1152.jpg 1536w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-2048x1536.jpg 2048w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-980x735.jpg 980w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6722-photo-2-gv90-neolun-exterior-1440x1080.jpg 1440w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+      <figcaption>
+        <div class="caption font-impact dusk:text-gray-300 mb-4 mt-2 inline-flex flex-row items-stretch gap-1 text-base leading-tight text-gray-400 dark:text-gray-300">
+    <div class="caption-icon bg-[left_top_5px] w-[10px] shrink-0"></div>
+    <div class="caption-content">
+      The GV90 Neolum is a variant with no B pillar and coach doors.
+
+              <span class="caption-credit mt-2 text-xs">
+          Credit:
+
+          
+          Genesis
+
+                  </span>
+          </div>
+  </div>
+      </figcaption>
+    </figure>
+      <figure>
+      <img decoding="async" width="1024" height="683" src="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-1024x683.jpg" class="ars-gallery-image" alt="GV90 Neolum interior" loading="lazy" aria-labelledby="caption-2168456" srcset="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-1024x683.jpg 1024w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-640x427.jpg 640w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-768x512.jpg 768w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-1536x1024.jpg 1536w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-2048x1366.jpg 2048w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-980x653.jpg 980w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6727-photo-7-gv90-neolun-interior-1440x960.jpg 1440w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+      <figcaption>
+        <div class="caption font-impact dusk:text-gray-300 mb-4 mt-2 inline-flex flex-row items-stretch gap-1 text-base leading-tight text-gray-400 dark:text-gray-300">
+    <div class="caption-icon bg-[left_top_5px] w-[10px] shrink-0"></div>
+    <div class="caption-content">
+      Here's one GV90 Neolum interior. The wood floor from the concept made it, too.
+
+              <span class="caption-credit mt-2 text-xs">
+          Credit:
+
+          
+          Genesis
+
+                  </span>
+          </div>
+  </div>
+      </figcaption>
+    </figure>
+      <figure>
+      <img decoding="async" width="1024" height="633" src="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-1024x633.jpg" class="ars-gallery-image" alt="" loading="lazy" aria-labelledby="caption-2168457" srcset="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-1024x633.jpg 1024w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-640x396.jpg 640w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-768x475.jpg 768w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-1536x950.jpg 1536w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-2048x1267.jpg 2048w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-980x606.jpg 980w, https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6726-photo-6-gv90-neolun-first-edition-interior-1440x891.jpg 1440w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+      <figcaption>
+        <div class="caption font-impact dusk:text-gray-300 mb-4 mt-2 inline-flex flex-row items-stretch gap-1 text-base leading-tight text-gray-400 dark:text-gray-300">
+    <div class="caption-icon bg-[left_top_5px] w-[10px] shrink-0"></div>
+    <div class="caption-content">
+      This is one of the First Edition GV90 Neolum interiors.
+
+              <span class="caption-credit mt-2 text-xs">
+          Credit:
+
+          
+          Genesis
+
+                  </span>
+          </div>
+  </div>
+      </figcaption>
+    </figure>
+  
+<p>Pillarless coach doors certainly add drama to a vehicle, and Genesis has previously told Ars it learned enough to engineer them with all the safety requirements volume production would require. Speaking of safety, all GV90s include the world's first roof airbag (which deploys in the case of a rollover), one of 12 airbags throughout the interior.</p><p><a href="https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>193</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6723-photo-3-gv90-exterior-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6723-photo-3-gv90-exterior-500x500.jpg" width="500"/>
+<media:credit>Genesis</media:credit><media:text>The Genesis GV90 has the luxury SUV look nailed down.</media:text></media:content>
+            </item>
+                    <item>
+                <title>SpaceX’s orbital data centers would create a new category of e-waste</title>
+                <link>https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/</link>
+                                    <comments>https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Scott K. Johnson]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 13:59:50 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[Space]]></category>
+		<category><![CDATA[ai data center]]></category>
+		<category><![CDATA[e-waste]]></category>
+		<category><![CDATA[recycling]]></category>
+		<category><![CDATA[spacex]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/</guid>
+
+                                    <description>
+                        <![CDATA[The yeetcycling math resembles asteroid mining in reverse.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Elon Musk’s talk about maintaining a million-strong AI data center satellite megaconstellation may not exactly be <a href="https://arstechnica.com/space/2026/07/how-hard-is-it-to-build-orbital-data-centers-actually/">practical</a> or <a href="https://arstechnica.com/space/2026/03/orbital-data-centers-part-1-theres-no-way-this-is-economically-viable-right/">economical</a>, but it might be unique. It’s about the closest we’ve come to confronting a scheme that would export a considerable amount of valuable materials into space. Humans aren’t doing a great job of material sustainability, but normally we’re talking about stuff escaping a recycling pipeline rather than <em>escaping</em> <em>Earth’s gravitational pull</em>.</p>
+<p>The commercial space sector likes talking about the allure of mining asteroids for precious metals to bring back to Earth. Under what circumstances are we going to be willing to do that in reverse? Starlink alone has <a href="https://www.tandfonline.com/doi/full/10.1080/21622671.2025.2594491">doubled the mass</a> of objects in low-Earth orbit, and this orbital data center constellation would dwarf that—and dispose of at least some satellites by pushing them away from Earth.</p>
+<p>Given the roughly five-year expected lifetime for data center GPUs, about 200,000 of the 1 million proposed SpaceX AI1 satellites would be decommissioned each year. Based on their <a href="https://www.scribd.com/document/1045612919/SpaceX-Response-05-29-2026">May 29 FCC filing</a>, about 40,000 would definitely deorbit and burn up in the atmosphere. (Those materials would largely be dispersed throughout the atmosphere, turning a resource into a diffuse contaminant that slowly settles over the globe. One related issue: the aluminum would cause an <a href="https://www.sjon.earth/elon-musks-orbital-data-centers-could-be-an-environmental-catastrophe/">unknown amount of ozone depletion</a> over a period of decades.) Some or all of the remaining 160,000 satellites would be moved outward into a distant “disposal” orbit, instead. Either way, they're lost from a "material life cycle" point of view.</p><p><a href="https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>223</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/yeetcycling-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/yeetcycling-500x500.jpg" width="500"/>
+<media:credit>Aurich Lawson | Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Reverse-lookup service exposed millions of photos of people’s faces</title>
+                <link>https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[lily Hay Newman, Matt Burgess, WIRED.com]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 13:29:54 +0000</pubDate>
+                		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[claritycheck]]></category>
+		<category><![CDATA[people search]]></category>
+		<category><![CDATA[syndication]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/</guid>
+
+                                    <description>
+                        <![CDATA[People-search tool ClarityCheck left database containing more than 9M image files exposed.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>When someone uploads a photo to the people-search tool ClarityCheck, the website has a clear message: “Your reverse image search is private and secure.” New <a href="https://www.expressvpn.com/blog/clarity-check-data-exposed/">research</a>, though, shows that the website left more than 9 million image files, including photographs of people’s faces, publicly <a href="https://www.wired.com/tag/data-breaches/">exposed</a>. And a second misconfiguration publicly exposed people’s email addresses and phone numbers.</p>
+<p>Overall, according to findings from independent security researcher Jeremiah Fowler, the exposed ClarityCheck database contained roughly 450 GB of images, including what appeared to be profile images, screenshots, and other photographs of adults, teenagers, and children. All of the images were stored in an unsecured Amazon S3 bucket, with files in folders named “faces” and “profiles,” which could be accessed by anyone online through a URL included in the company’s publicly available website code.</p>
+<p>ClarityCheck is one of a number of so-called people-finder tools that have appeared online in recent years. These websites broadly claim to be able to search the web, public records, and other databases to identify individuals. ClarityCheck’s website says it can run searches on phone numbers, email addresses, vehicle identification numbers, and names. Its photo-search page says it can help “identify anyone in a photo” and find social media profiles “in seconds.”</p><p><a href="https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>45</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-1047996096-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-1047996096-500x500.jpg" width="500"/>
+<media:credit>	picture alliance / Contributor</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Grok exfiltrates user data when malicious instructions are encrypted</title>
+                <link>https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/</link>
+                                    <comments>https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Dan Goodin]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 13:00:35 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Biz & IT]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[cryptography]]></category>
+		<category><![CDATA[LLM security]]></category>
+		<category><![CDATA[prompt injections]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/</guid>
+
+                                    <description>
+                        <![CDATA[Cryptographic Context Injection is only the latest way to break an LLM safety guardrail.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Earlier this week, researchers outlined an attack that used a secret input provided by Microsoft 365 Copilot for enterprise to cause the AI assistant to exfiltrate a password present in the user’s inbox. Now, a separate team has devised a similar attack against Grok. The new data theft hack employs a deceptively simple trick to force the Elon Musk-owned large language model to steal user chats and other personal information. At the time this post went live, the assistant continued to cough up the data, despite xAI being informed of it in June.</p>
+<p>The lesson from both this week’s episodes—and the countless other ones that have come before it—is that LLMs are incapable of solving the root causes for prompt injections, the most severe vulnerability classes they’re most prone to. That leaves AI developers with no other option but to build a guardrail that steers the model away from the harmful actions. As I noted in <a href="https://arstechnica.com/security/2026/08/microsoft-copilot-reveals-secret-input-that-allowed-it-to-be-hacked/">Tuesday’s story</a>, the approach is tantamount to a road traffic safety engineer erecting a protective rail around a dangerous bend rather than banking the curve.</p>
+<h2>Cryptographic Context Injection in the house</h2>
+<p>Prompt injections exploit LLMs' training to comply with user requests whenever possible. Attackers can capitalize on the predilection by smuggling harmful instructions into emails or webpages the assistant is instructed to summarize. Because LLMs can’t reliably distinguish between content in an email sent by an untrusted party and user instructions entered directly into a prompt, the overly solicitous LLM faithfully follows them. To date, Grok and other LLMs' only recourse is to create guardrails that flag suspicious instructions and forbid them from being executed.</p><p><a href="https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/">Read full article</a></p>
+<p><a href="https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>104</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/06/xai-grok-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/06/xai-grok-500x500.jpg" width="500"/>
+<media:credit>Getty Images | SOPA Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>NASA calls off mission to rescue Swift gamma-ray observatory</title>
+                <link>https://arstechnica.com/space/2026/08/nasa-calls-off-mission-to-rescue-swift-gamma-ray-observatory/</link>
+                                    <comments>https://arstechnica.com/space/2026/08/nasa-calls-off-mission-to-rescue-swift-gamma-ray-observatory/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Thu, 20 Aug 2026 00:18:48 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[Commercial space]]></category>
+		<category><![CDATA[katalyst space]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[satellite servicing]]></category>
+		<category><![CDATA[Swift Mission]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/08/nasa-calls-off-mission-to-rescue-swift-gamma-ray-observatory/</guid>
+
+                                    <description>
+                        <![CDATA[Without a rescue, NASA's Swift Observatory is expected to reenter the atmosphere later this year.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>NASA and Katalyst Space Technologies announced Wednesday they are giving up on a robotic mission to rescue the Swift gamma-ray telescope before it falls out of orbit.</p>
+<p>The rescue satellite, named Link, launched July 3 on a journey to fly up to NASA's Neil Gehrels Swift Observatory, capture it with three robotic arms, and boost its orbit high enough to escape a looming reentry. Link is about the size of a refrigerator, with two power-generating solar arrays and three xenon-fueled electric thrusters to send Swift into a safer, higher orbit.</p>
+<p>Katalyst, the startup leading the Swift rescue effort, said Wednesday that "ongoing attitude control issues" will prevent the Link satellite from completing its rescue mission. The spacecraft is still alive, and Katalyst said it will make the most of Link's remaining capacity, which may still allow it to get near enough to Swift for a demonstration of the satellite's close-in navigation system.</p><p><a href="https://arstechnica.com/space/2026/08/nasa-calls-off-mission-to-rescue-swift-gamma-ray-observatory/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/08/nasa-calls-off-mission-to-rescue-swift-gamma-ray-observatory/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>93</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/1783980227655-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/08/1783980227655-500x500.jpg" width="500"/>
+<media:credit>Katalyst Space Technologies</media:credit><media:text>A camera onboard Katalyst's Link spacecraft captured this view of one of its solar arrays in low-Earth orbit.</media:text></media:content>
+            </item>
+            </channel>
+</rss>

@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw"/>
+ <id>yt:channel:XuqSBlHAE6Xw-yeJA0Tunw</id>
+ <yt:channelId>XuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+ <title>Linus Tech Tips</title>
+ <link rel="alternate" href="https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw"/>
+ <author>
+  <name>Linus Tech Tips</name>
+  <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+ </author>
+ <published>2008-11-25T00:46:52+00:00</published>
+ <entry>
+  <id>yt:video:04MFcE-ntxQ</id>
+  <yt:videoId>04MFcE-ntxQ</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Creators Share Embarrassing Stories of Linus</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/04MFcE-ntxQ"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-21T16:51:24+00:00</published>
+  <updated>2026-08-21T16:51:45+00:00</updated>
+  <media:group>
+   <media:title>Creators Share Embarrassing Stories of Linus</media:title>
+   <media:content url="https://www.youtube.com/v/04MFcE-ntxQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/04MFcE-ntxQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Zip Tie Tuning, Sammit and Luke from the WAN Show all share embarrassing and funny stories of Linus!</media:description>
+   <media:community>
+    <media:starRating count="4503" average="5.00" min="1" max="5"/>
+    <media:statistics views="163624"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:QfCW5bXvwII</id>
+  <yt:videoId>QfCW5bXvwII</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Pranking Linus for his 40th Birthday</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/QfCW5bXvwII"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-20T18:10:26+00:00</published>
+  <updated>2026-08-21T07:25:06+00:00</updated>
+  <media:group>
+   <media:title>Pranking Linus for his 40th Birthday</media:title>
+   <media:content url="https://www.youtube.com/v/QfCW5bXvwII?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/QfCW5bXvwII/hqdefault.jpg" width="480" height="360"/>
+   <media:description>We pranked Linus for his 40th birthday, and rebranding Linus Media Group isn't the only thing we did...</media:description>
+   <media:community>
+    <media:starRating count="27017" average="5.00" min="1" max="5"/>
+    <media:statistics views="1035140"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:36oL-7C_qR4</id>
+  <yt:videoId>36oL-7C_qR4</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>There’s NO Excuse Not To Try Linux!</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=36oL-7C_qR4"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-20T16:54:26+00:00</published>
+  <updated>2026-08-21T08:44:47+00:00</updated>
+  <media:group>
+   <media:title>There’s NO Excuse Not To Try Linux!</media:title>
+   <media:content url="https://www.youtube.com/v/36oL-7C_qR4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/36oL-7C_qR4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Thanks to MSI for sponsoring this video! Check out their Intel Gamer Days deals at https://msi.gm/SA322D11
+
+People are clearly wanting to try Linux or at least a bit interested in trying Linux, but how do you try Linux without completely getting rid of the current Windows Install. Dual Booting allows you to have multiple operating systems installed on your computer for many different reasons. Today we look at Luke's setup with CachyOS and Windows to see how it works and why he does it.
+
+Discuss on the forum: https://linustechtips.com/topic/1642012-there%E2%80%99s-no-excuse-not-to-try-linux/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+1:45 Who Is Luke?
+2:00 How Long has he Been Dual Booting
+2:21 Why Keep Windows?
+3:40 How is it Setup
+6:47 How To Switch
+10:25 Secure Boot?
+14:02 Funny Windows Issue...
+15:50 Rebooting to CachyOS
+17:45 Outro</media:description>
+   <media:community>
+    <media:starRating count="26971" average="5.00" min="1" max="5"/>
+    <media:statistics views="596265"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:AHP423JqiLc</id>
+  <yt:videoId>AHP423JqiLc</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>$5 vs $500 Guitar Hero Controller!</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=AHP423JqiLc"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-19T17:00:11+00:00</published>
+  <updated>2026-08-20T09:31:01+00:00</updated>
+  <media:group>
+   <media:title>$5 vs $500 Guitar Hero Controller!</media:title>
+   <media:content url="https://www.youtube.com/v/AHP423JqiLc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/AHP423JqiLc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Wherever today takes you, go comfortably with Vessi Weekend Chelsea—made for exploring, rain or shine. One pair. Countless adventures.
+
+✨ Grab 15% off your first pair here: https://vessi.com/ltt
+• Free shipping • 30‑day returns • 1‑year warranty
+
+The nostalgia cycle has sent Guitar Hero controller prices through the roof, but you don't need to break the bank to relive the glory days. From $5 keyboard setups to $500 custom builds, we’re testing every budget option to find the best way to shred. 
+
+Discuss on the forum: https://linustechtips.com/topic/1641977-5-vs-500-guitar-hero-controller/
+
+HDE Controller Adapter for PlayStation 2 Controllers, Converter Cable for PC &amp; PS3: https://geni.us/j56JWV
+RetroCultMods V3 Wii/USB Adapter With Tilt: https://geni.us/eCrrzfz
+USB Breakaway Cable for Xbox 360: https://geni.us/4klkbvy
+RetroCultMods Solderless Revival Kit for Guitar Hero Controllers: https://geni.us/wGpXJv
+PDP Riffmaster Wireless Guitar Controller for Xbox Series X|S, Xbox One, PC: https://geni.us/Iy8luI
+NBCP Guitar Hero Controller for PC and PS3: https://geni.us/HkFER
+CRKD Gibson Les Paul Blueberry Burst Pro Edition Guitar Controller (Multi-platform): https://geni.us/99vge
+Hammer-On Guitars: https://geni.us/XQuf
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Guitar Hero?!? In 2026?!?
+0:45 $20 and $5 Options
+3:43 Sponsor Spot and Intro
+4:09 $50ish is Great Place to start
+7:03 $100 Nostalgia Take Over
+8:00 Our Choice of Rhythm Game
+9:11 $150 Gets you something NEW!
+16:01 $250-500 Axe of the GODS!
+21:50 What should you buy?
+22:16 A Sponsor Spot Worth Watching + Outro</media:description>
+   <media:community>
+    <media:starRating count="11607" average="5.00" min="1" max="5"/>
+    <media:statistics views="275649"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:vzg5cv785j4</id>
+  <yt:videoId>vzg5cv785j4</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>What’s the Most Cost Effective Tech Upgrades</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/vzg5cv785j4"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-18T22:39:01+00:00</published>
+  <updated>2026-08-20T10:32:08+00:00</updated>
+  <media:group>
+   <media:title>What’s the Most Cost Effective Tech Upgrades</media:title>
+   <media:content url="https://www.youtube.com/v/vzg5cv785j4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/vzg5cv785j4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>What are the most cost effective ways to improve my gaming experience? There's more than one...
+
+lmg.gg/nexigo</media:description>
+   <media:community>
+    <media:starRating count="4800" average="5.00" min="1" max="5"/>
+    <media:statistics views="161738"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:MQeJYEN_lrg</id>
+  <yt:videoId>MQeJYEN_lrg</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>This DIY Datacenter is NUTS - Hetzner Tour</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=MQeJYEN_lrg"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-17T17:16:01+00:00</published>
+  <updated>2026-08-20T21:53:29+00:00</updated>
+  <media:group>
+   <media:title>This DIY Datacenter is NUTS - Hetzner Tour</media:title>
+   <media:content url="https://www.youtube.com/v/MQeJYEN_lrg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/MQeJYEN_lrg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Thanks to Hetzner for sponsoring this video! Use code ltt20 to get $20 off Hetzner products by using our link: https://htznr.li/LTT26
+
+We traveled to Falkenstein, Germany, to tour one of Hetzner’s data centers and see how their hands-on, DIY approach helps power their infrastructure at scale. From custom-built solutions to the servers themselves, we got a behind-the-scenes look at how Hetzner does things a little differently.
+
+Discuss on the forum: https://linustechtips.com/topic/1641785-they-let-me-build-a-real-customer-server/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+00:00 - Intro
+01:16 - Why Falkenstein? 
+01:58 - Modular building &amp; roof design 
+03:25 - Custom &quot;Bare Metal&quot; solutions
+05:35 - Consumer hardware in the data center 
+06:38 - Technician workstations &amp; repairs 
+07:05 - Networking &amp; physical private networks 
+07:49 - Exploring under the Cold Aisles
+08:42 - Power backup &amp; cooling systems 
+10:58 - Linus builds a server.. the German way!
+11:58 - 3D printed shrouds
+14:40 - Self tapping screws
+15:52 - Mistakes were made
+18:07 - Final assembly
+19:32 - R&amp;D and testing racks 
+20:38 - TOP secret experimental room
+21:13 - Final thoughts</media:description>
+   <media:community>
+    <media:starRating count="42527" average="5.00" min="1" max="5"/>
+    <media:statistics views="977611"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ea3EvwkW_28</id>
+  <yt:videoId>ea3EvwkW_28</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Legends Never Die</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=ea3EvwkW_28"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-15T17:00:34+00:00</published>
+  <updated>2026-08-15T17:01:04+00:00</updated>
+  <media:group>
+   <media:title>Legends Never Die</media:title>
+   <media:content url="https://www.youtube.com/v/ea3EvwkW_28?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/ea3EvwkW_28/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Thanks to UGREEN for sponsoring this video! Check out the Nexode Pro 160W Retractable Charger and more below!
+
+UGREEN Nexode Pro 160W Retractable Charger (AMZ, Up to 20%)  https://amzn.to/4aXNCeq
+UGREEN Nexode Pro 160W Retractable Charger (DTC, Up to 20%)  https://shop.us.ugreen.com/FZ9wXc
+UGREEN Nexode Display Charger Series (AMZ US, Up to 20%)  https://amzn.to/4wMuOag
+
+Before NVIDIA became all about AI this and AI that, they had the hearts and minds of gamers all over the world captivated by the release of what could be considered the greatest GPU of all time. The 1080 was truly ahead of its time, dominating the market in just about every way. But does it still hold up 10 years later?
+
+Check out the LABS article! https://www.lttlabs.com/articles/2026/07/15/gtx-1080s-revisiting-legends#gtx-in-an-rtx-world
+
+Discuss on the forum: https://linustechtips.com/topic/1641848-legends-never-die/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+2:52 How Viable Are They Today?
+4:27 Raytracing Required Games
+4:50 Who Cares About Those
+5:16 NVIDIA Price Shock
+6:05 Compared to Newer Cards
+7:12 Let's Talk DLSS
+7:45 What About Other Applications?
+8:53 The Used Market
+11:01 Outro</media:description>
+   <media:community>
+    <media:starRating count="26640" average="5.00" min="1" max="5"/>
+    <media:statistics views="770919"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:J261Rg0LTDA</id>
+  <yt:videoId>J261Rg0LTDA</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>&quot;Pro&quot; phones are stupid - PIxel 11 Announcement</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=J261Rg0LTDA"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-13T08:19:30+00:00</published>
+  <updated>2026-08-14T10:11:13+00:00</updated>
+  <media:group>
+   <media:title>&quot;Pro&quot; phones are stupid - PIxel 11 Announcement</media:title>
+   <media:content url="https://www.youtube.com/v/J261Rg0LTDA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/J261Rg0LTDA/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Start building your website today! Visit https://squarespace.syuh.net/LTT and use offer code LTT for 10% off
+ 
+At their Made By Google 2026 event, the company announced their new Pixel 11, Pixel 11 Pro, and Pixel 11 Pro Fold phones- as well as new watches, buds, and an AirTag competitor, the Google Pixel Tag. Too bad they didn't announce cheaper RAM...
+
+Check out the Google Pixel 11 Pro: https://geni.us/2YjDA
+Check out the Google Pixel 11 Pro Fold: https://geni.us/bsyiIuu
+Google Pixel Watch 5: https://geni.us/xARWTy
+Check out the Google Pixel Tag: https://geni.us/Dr5is
+
+Discuss on the forum: https://linustechtips.com/topic/1641792-pro-phones-are-stupid/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+1:40 Pixel Tag
+2:13 The Phones
+6:02 Pixel Watch 5
+6:26 Software
+8:26 New camera things
+10:53 Outro</media:description>
+   <media:community>
+    <media:starRating count="20019" average="5.00" min="1" max="5"/>
+    <media:statistics views="681024"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ofNcSiFpDUk</id>
+  <yt:videoId>ofNcSiFpDUk</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Tech Russian Roulette with True or False Questions!</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/ofNcSiFpDUk"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-11T18:08:30+00:00</published>
+  <updated>2026-08-16T18:53:23+00:00</updated>
+  <media:group>
+   <media:title>Tech Russian Roulette with True or False Questions!</media:title>
+   <media:content url="https://www.youtube.com/v/ofNcSiFpDUk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/ofNcSiFpDUk/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Can you determine if this tech question is true or false under pressure?</media:description>
+   <media:community>
+    <media:starRating count="10726" average="5.00" min="1" max="5"/>
+    <media:statistics views="511895"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:rbQtX_thQtQ</id>
+  <yt:videoId>rbQtX_thQtQ</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>It Shouldn’t be this Hard to Buy A Printer…</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=rbQtX_thQtQ"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-11T16:56:25+00:00</published>
+  <updated>2026-08-12T13:53:02+00:00</updated>
+  <media:group>
+   <media:title>It Shouldn’t be this Hard to Buy A Printer…</media:title>
+   <media:content url="https://www.youtube.com/v/rbQtX_thQtQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/rbQtX_thQtQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Get a free 15-day trial of Odoo’s all-in-one business solution and see how it can make your life easier! Check it out at https://www.odoo.com/ltt
+
+Linus and Elijah are on a mission to buy a Printer. The problem? Neither of them have bought a printer in YEARS. What Printer should they buy? Do they want Ink Jet, Ink Tank, Laser? Well the Boys head to Staples to take a look
+
+Discuss on the forum: https://linustechtips.com/topic/1641726-i-hate-printer-shopping/
+
+Check out the printers from the video! 
+Linus' Pick: Epson EcoTank ET-2900 Wireless All-in-One Color Supertank Printer: https://geni.us/t4MdxU
+Elijah's Pick: Brother Wireless HL-L2465DW Compact Monochrome Multi-Function Laser Printer: https://prsm2.com/HrR-IqBPH
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+1:47 Going Undercover
+2:08 The Hunt Begins
+3:06 EXPENSIVE Printers
+3:43 HP Printer
+4:02 Canon Printer
+5:38 Epson Printer
+6:53 Another Isle
+8:25 Bad Joke Elijah...
+8:51 Trying to Decide...
+10:37 MORE PRINTERS
+11:15 Toner and Ink Costs
+13:39 Choice Paralysis
+14:15 What did we Pick
+16:00 Comparing Prints
+19:29 Outro</media:description>
+   <media:community>
+    <media:starRating count="49606" average="5.00" min="1" max="5"/>
+    <media:statistics views="1592265"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:NWoT1ZVd1Lo</id>
+  <yt:videoId>NWoT1ZVd1Lo</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Her phone died, so I'm making her fix it</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=NWoT1ZVd1Lo"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-09T17:00:02+00:00</published>
+  <updated>2026-08-15T00:39:18+00:00</updated>
+  <media:group>
+   <media:title>Her phone died, so I'm making her fix it</media:title>
+   <media:content url="https://www.youtube.com/v/NWoT1ZVd1Lo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/NWoT1ZVd1Lo/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Thanks to Meter for sponsoring this video! Go to https://meter.com/ltt to book a demo now!
+
+Linus, being the Tech Tip man that he is, often fixes tech issues for the people around him. But not today! When his daughter's Samsung Galaxy Note 10 battery started swelling, he saw it as the perfect opportunity to pass on his wisdom.
+
+Discuss on the forum: https://linustechtips.com/topic/1641653-her-phone-died-so-im-making-her-fix-it/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+1:40 Sooo how do we fix this?
+3:57 Removing the adhesive
+5:52 This is not Arts and Crafts
+6:24 Removing the screws
+8:00 The guide was wrong all along
+9:00 Back to tearing down the phone
+11:06 What in the world is this cable
+12:24 We can rebuild
+13:01 Will it charge?
+14:40 Lil Linus has appeared
+14:50 The bad news
+15:04 The good news
+18:06 Outro</media:description>
+   <media:community>
+    <media:starRating count="44025" average="5.00" min="1" max="5"/>
+    <media:statistics views="1070082"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:XiSMWonFuQQ</id>
+  <yt:videoId>XiSMWonFuQQ</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Rating Every Version of Windows</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=XiSMWonFuQQ"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-08T17:13:04+00:00</published>
+  <updated>2026-08-12T01:24:18+00:00</updated>
+  <media:group>
+   <media:title>Rating Every Version of Windows</media:title>
+   <media:content url="https://www.youtube.com/v/XiSMWonFuQQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/XiSMWonFuQQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Traditional carriers leave your calls, texts, and identity exposed. Cape protects them with built-in defenses against signaling attacks, daily IMSI rotation, and privacy-first mobile service.
+
+Use code LTT and get 33% off your first 6 months: https://cape.co/LTT
+
+App Download Links:
+Apple: https://lmg.gg/CapeIOS
+Google: https://lmg.gg/CapeAndroid
+
+Cape is also now available on the Accrescent App Store: https://accrescent.app/
+
+Hot take, Windows [insert version here] is the best and Windows [insert your favorite version of windows] sucks. Hot take, I KNOW... But where does Linus rank them all? Let's find out!
+
+Discuss on the forum: https://linustechtips.com/topic/1641622-ranking-every-version-of-windows/
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+1:10 Windows 1 &amp; 2
+2:30 Windows 3
+4:37 Start Me Up!
+6:53 Windows 98
+9:14 I don't want to talk about it.
+11:05 Windows XP
+14:42 Windows Vista
+17:33 Windows 7
+18:47 What do you mean you don't have a touchscreen?
+20:26 Windows 8.1
+22:12 Windows 10
+25:43 Windows 11
+28:50 Credits
+
+Corrections:
+21:04 Linus misspeaks here he should have said 'Button' not 'Menu'
+24:34 Oops, OG Edge wasn't Chromium based, that came a little later!</media:description>
+   <media:community>
+    <media:starRating count="35103" average="5.00" min="1" max="5"/>
+    <media:statistics views="908429"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:1Z5bbuLPwX4</id>
+  <yt:videoId>1Z5bbuLPwX4</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>YouTuber Merch Tier List</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/1Z5bbuLPwX4"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-05T22:48:26+00:00</published>
+  <updated>2026-08-12T07:42:20+00:00</updated>
+  <media:group>
+   <media:title>YouTuber Merch Tier List</media:title>
+   <media:content url="https://www.youtube.com/v/1Z5bbuLPwX4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/1Z5bbuLPwX4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>We bought 14 YouTuber merch items to rank them in a tier list, check out the full video to see which YouTuber merch item we like the most!
+
+https://youtu.be/ijUCl9w95vg?si=NPmrOHGNCCp73al6</media:description>
+   <media:community>
+    <media:starRating count="15642" average="5.00" min="1" max="5"/>
+    <media:statistics views="612827"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ijUCl9w95vg</id>
+  <yt:videoId>ijUCl9w95vg</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>Youtuber Products Tier List</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=ijUCl9w95vg"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-05T17:07:36+00:00</published>
+  <updated>2026-08-10T15:22:41+00:00</updated>
+  <media:group>
+   <media:title>Youtuber Products Tier List</media:title>
+   <media:content url="https://www.youtube.com/v/ijUCl9w95vg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/ijUCl9w95vg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Don’t miss NexiGo’s limited-time Back-to-School deals! Save an additional 5% on your order with code LTTxNexiGo using our link: https://www.nexigo.com/pages/back-to-school-2026
+
+Making quality products is hard, but these creators have resisted the temptation of cheap, generic merch to build truly unique items. We’re diving into a collection of bespoke gear from your favorite science and tech YouTubers. What gets an A on our tier list, and which one do we think is worth buying?
+
+Discuss on the forum: https://linustechtips.com/topic/1641517-ranking-youtuber-merch-tech-science-edition/
+
+Check out the products and stores we featured today!
+Yecht - https://yetch.studio
+Hacksmith - https://hacksmith.store/
+Savage Industries - https://adamsavage.com/
+Combustion, Inc. - https://combustion.inc/
+Smarter Every Day - https://www.smartereveryday.com/store
+Good Store - https://good.store/
+Kofi Yeboah - https://kondorblue.com/collections/tools-grip/products/kofi-capture-cup
+Potato Jet - https://www.smallrig.com/SmallRig-x-Potato-Jet-TRIBEX-SE-Hydraulic-Tripod-5305.html?sku=5305
+Giaco Whatever - https://placedatoms.com/products/kinetic-driver?srsltid=AfmBOorY-q68guJtO6_vsXLCFRvpMC-MNDrLM6yFzAgIqY6SNphpZ_TP
+
+Check out our Channel Partners:
+Secretlab - Grab a TITAN Evo ergonomic gaming chair:  https://lmg.gg/secretlabltt
+PIA - Get the VPN of our choice: https://www.piavpn.com/ltt
+dbrand - Buy a &quot;Circuit&quot; series skin for your device: https://dbrand.com/pcb
+
+► SHOP LTT PRODUCTS: https://lttstore.com
+► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane
+► DIVE DEEPER ON THE LTT LABS WEBSITE: https://lmg.gg/labs
+► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners
+
+Purchases made through some store links may provide some compensation to Linus Media Group. Affiliate links powered in part by https://affilimate.com/?aid=ghz1izbpb
+
+Linus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek.
+
+CHAPTERS
+---------------------------------------------------
+0:00 Intro
+0:44 Sponsor Spot 
+0:56 Yecht 
+3:40 Hacksmith
+7:27 Adam Savage
+10:05 Combustion, Inc. and Smarter Every Day
+15:20 Kofi Yeboah
+17:10 Potato Jet
+18:55 Giaco Whatever
+19:59 Final Tier List and Discussion
+21:09 Sponsor Spot and Outro</media:description>
+   <media:community>
+    <media:starRating count="27171" average="5.00" min="1" max="5"/>
+    <media:statistics views="817655"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ElhkWZdPDEc</id>
+  <yt:videoId>ElhkWZdPDEc</yt:videoId>
+  <yt:channelId>UCXuqSBlHAE6Xw-yeJA0Tunw</yt:channelId>
+  <title>First Person to Say Hi Wins NEW Screwdriver</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/ElhkWZdPDEc"/>
+  <author>
+   <name>Linus Tech Tips</name>
+   <uri>https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw</uri>
+  </author>
+  <published>2026-08-04T21:10:13+00:00</published>
+  <updated>2026-08-09T01:05:55+00:00</updated>
+  <media:group>
+   <media:title>First Person to Say Hi Wins NEW Screwdriver</media:title>
+   <media:content url="https://www.youtube.com/v/ElhkWZdPDEc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/ElhkWZdPDEc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The first person to say hi to Linus in his disguise, wins our new color of the LTT Prismagic Transparent Screwdriver, The Nuclear Screwdriver!
+
+Check out lttstore.com for a gift and to be notified when it releases!</media:description>
+   <media:community>
+    <media:starRating count="52024" average="5.00" min="1" max="5"/>
+    <media:statistics views="2170263"/>
+   </media:community>
+  </media:group>
+ </entry>
+</feed>

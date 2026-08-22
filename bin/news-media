@@ -1,0 +1,273 @@
+#!/usr/bin/env bash
+# Artwork resolution for the News bar plugin.
+#
+# Two jobs the QML side should not be doing itself:
+#
+#   1. Reading an article page to find its OpenGraph artwork. Pages are
+#      routinely 400-500 KB; pulling that through XMLHttpRequest would park
+#      half a megabyte of markup in the shell's JS heap per story.
+#   2. Downloading artwork to disk. Qt's image cache is per-process and
+#      in-memory, so without this every panel open re-fetches every picture
+#      from the publisher -- and "clean the cache" would have nothing to clean.
+#
+# Every fetch is bounded in time and in bytes, and nothing is ever written
+# outside the cache directory handed in on argv.
+#
+# Usage:
+#   news-media page  <cache-dir> <article-url> <item-id>   resolve + download
+#   news-media image <cache-dir> <image-url>   <item-id>   download only
+#   news-media list  <cache-dir>                           inventory the picture cache
+#   news-media gc    <cache-dir> [path...]                  delete those files (or stdin)
+#
+# Emits one JSON object on stdout. Failure is reported in that JSON, not by
+# exit status: a story with no picture is a normal outcome, not an error.
+
+set -uo pipefail
+
+readonly UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+# 1 MB. Generous on purpose: a plain article page puts its <head> in the first
+# few KB and the read stops there, but a JS-heavy page can bury its meta tags
+# behind hundreds of KB of inline script (a YouTube watch page keeps og:image at
+# roughly byte 698,000). Pages smaller than the cap cost nothing extra.
+readonly PAGE_MAX_BYTES=1048576
+readonly IMAGE_MAX_BYTES=4194304    # 4 MB; a card is a few hundred px wide
+readonly CONNECT_TIMEOUT=8
+readonly TOTAL_TIMEOUT=20
+
+json_escape() {
+  local s=${1-}
+  s=${s//\\/\\\\}
+  s=${s//\"/\\\"}
+  s=${s//$'\n'/ }
+  s=${s//$'\r'/ }
+  s=${s//$'\t'/ }
+  printf '%s' "$s"
+}
+
+emit() { # emit ok id image video site artwork bytes error
+  printf '{"ok":%s,"id":"%s","image":"%s","video":"%s","siteName":"%s","artwork":"%s","bytes":%s,"error":"%s"}\n' \
+    "$1" "$(json_escape "$2")" "$(json_escape "$3")" "$(json_escape "$4")" \
+    "$(json_escape "$5")" "$(json_escape "$6")" "${7:-0}" "$(json_escape "${8-}")"
+}
+
+# The cache directory is the only place this script may write. Resolving it and
+# refusing anything outside is what keeps a crafted item id or a poisoned cache
+# index from turning a delete into an arbitrary unlink.
+resolve_cache_dir() {
+  local dir=$1
+  [[ -n $dir && $dir == /* ]] || return 1
+  mkdir -p -- "$dir" 2>/dev/null || return 1
+  CACHE_DIR=$(cd -- "$dir" && pwd -P) || return 1
+  [[ -n $CACHE_DIR && $CACHE_DIR != "/" ]] || return 1
+  return 0
+}
+
+# curl exits 23 when head closes the pipe early, which is the normal way this
+# stops reading a large page. That is success here, not failure.
+fetch_head() {
+  local url=$1
+  curl --silent --location --max-redirs 5 \
+       --connect-timeout "$CONNECT_TIMEOUT" --max-time "$TOTAL_TIMEOUT" \
+       --user-agent "$UA" \
+       --header 'Accept: text/html,application/xhtml+xml' \
+       --proto '=http,https' \
+       "$url" 2>/dev/null | head -c "$PAGE_MAX_BYTES"
+}
+
+# <meta property="og:image" content="..."> in any attribute order, with either
+# quote style, and with property/name used interchangeably as publishers do.
+meta_content() {
+  local html=$1 key=$2
+  printf '%s' "$html" \
+    | tr '\n' ' ' \
+    | grep -oiE "<meta[^>]*(property|name)[[:space:]]*=[[:space:]]*[\"']${key}[\"'][^>]*>|<meta[^>]*content[[:space:]]*=[^>]*(property|name)[[:space:]]*=[[:space:]]*[\"']${key}[\"'][^>]*>" \
+    | head -n 1 \
+    | grep -oiE "content[[:space:]]*=[[:space:]]*(\"[^\"]*\"|'[^']*')" \
+    | head -n 1 \
+    | sed -E "s/^content[[:space:]]*=[[:space:]]*[\"']//; s/[\"']$//"
+}
+
+# Entities survive in meta attributes constantly (&amp; in every query string).
+unescape() {
+  printf '%s' "${1-}" \
+    | sed -e 's/&amp;/\&/g' -e 's/&#38;/\&/g' -e 's/&quot;/"/g' \
+          -e 's/&#39;/'"'"'/g' -e 's/&apos;/'"'"'/g' -e 's/&lt;/</g' -e 's/&gt;/>/g'
+}
+
+absolutize() { # absolutize url base
+  local u=${1-} base=${2-}
+  [[ -z $u ]] && return 0
+  case $u in
+    http://*|https://*) printf '%s' "$u"; return 0 ;;
+    //*)                printf 'https:%s' "$u"; return 0 ;;
+  esac
+  local origin=${base%%/*}
+  origin=$(printf '%s' "$base" | grep -oE '^https?://[^/]+') || true
+  [[ -z $origin ]] && return 0
+  case $u in
+    /*) printf '%s%s' "$origin" "$u" ;;
+    *)  printf '%s/%s' "$origin" "$u" ;;
+  esac
+}
+
+is_http_url() { [[ ${1-} =~ ^https?://[^[:space:]\"\'\<\>]+$ ]]; }
+
+# Named by a hash of the source URL, so the same picture shared by two stories
+# is downloaded once and re-requesting it after a cleanup lands on the same
+# path. The extension comes from the bytes, never from the URL.
+download_image() {
+  local url=$1
+  is_http_url "$url" || { printf ''; return 1; }
+
+  local key tmp mime ext dest
+  key=$(printf '%s' "$url" | sha1sum | cut -d' ' -f1)
+  tmp="$CACHE_DIR/.tmp.$key.$$"
+
+  curl --silent --location --max-redirs 5 \
+       --connect-timeout "$CONNECT_TIMEOUT" --max-time "$TOTAL_TIMEOUT" \
+       --user-agent "$UA" \
+       --header 'Accept: image/avif,image/webp,image/*' \
+       --proto '=http,https' \
+       --max-filesize "$IMAGE_MAX_BYTES" \
+       --output "$tmp" "$url" 2>/dev/null
+
+  [[ -s $tmp ]] || { rm -f -- "$tmp"; return 1; }
+
+  # A server can answer an image request with anything at all. Trusting the
+  # bytes rather than the URL keeps HTML error pages out of the picture cache.
+  mime=$(file -b --mime-type -- "$tmp" 2>/dev/null)
+  case $mime in
+    image/jpeg) ext=jpg ;;
+    image/png)  ext=png ;;
+    image/webp) ext=webp ;;
+    image/gif)  ext=gif ;;
+    image/avif) ext=avif ;;
+    *) rm -f -- "$tmp"; return 1 ;;
+  esac
+
+  dest="$CACHE_DIR/$key.$ext"
+  mv -f -- "$tmp" "$dest" 2>/dev/null || { rm -f -- "$tmp"; return 1; }
+  chmod 600 -- "$dest" 2>/dev/null
+  printf '%s' "$dest"
+}
+
+file_size() { stat -c%s -- "$1" 2>/dev/null || printf '0'; }
+
+cmd_page() {
+  local dir=$1 url=$2 id=$3
+  resolve_cache_dir "$dir" || { emit false "$id" "" "" "" "" 0 "unusable cache directory"; return 0; }
+  is_http_url "$url" || { emit false "$id" "" "" "" "" 0 "not an http url"; return 0; }
+
+  local html
+  html=$(fetch_head "$url")
+  [[ -n $html ]] || { emit false "$id" "" "" "" "" 0 "page unreachable"; return 0; }
+
+  local image video site
+  image=$(unescape "$(meta_content "$html" 'og:image')")
+  [[ -z $image ]] && image=$(unescape "$(meta_content "$html" 'og:image:url')")
+  [[ -z $image ]] && image=$(unescape "$(meta_content "$html" 'twitter:image')")
+  [[ -z $image ]] && image=$(unescape "$(meta_content "$html" 'twitter:image:src')")
+  video=$(unescape "$(meta_content "$html" 'og:video:secure_url')")
+  [[ -z $video ]] && video=$(unescape "$(meta_content "$html" 'og:video:url')")
+  [[ -z $video ]] && video=$(unescape "$(meta_content "$html" 'og:video')")
+  site=$(unescape "$(meta_content "$html" 'og:site_name')")
+
+  image=$(absolutize "$image" "$url")
+  video=$(absolutize "$video" "$url")
+  is_http_url "$image" || image=""
+  is_http_url "$video" || video=""
+
+  if [[ -z $image ]]; then
+    emit false "$id" "" "$video" "$site" "" 0 "no artwork on the page"
+    return 0
+  fi
+
+  local path bytes=0
+  path=$(download_image "$image") || path=""
+  [[ -n $path ]] && bytes=$(file_size "$path")
+  if [[ -z $path ]]; then
+    emit false "$id" "$image" "$video" "$site" "" 0 "artwork could not be downloaded"
+    return 0
+  fi
+  emit true "$id" "$image" "$video" "$site" "$path" "$bytes" ""
+}
+
+cmd_image() {
+  local dir=$1 url=$2 id=$3
+  resolve_cache_dir "$dir" || { emit false "$id" "" "" "" "" 0 "unusable cache directory"; return 0; }
+  local path bytes=0
+  path=$(download_image "$url") || path=""
+  if [[ -z $path ]]; then
+    emit false "$id" "$url" "" "" "" 0 "artwork could not be downloaded"
+    return 0
+  fi
+  bytes=$(file_size "$path")
+  emit true "$id" "$url" "" "" "$path" "$bytes" ""
+}
+
+# Deletes only paths that resolve inside the cache directory. The guard is
+# against the cache index itself being wrong, not only against a hostile one:
+# a bug upstream that put "/" in an artwork field should cost nothing.
+cmd_gc() {
+  local dir=$1
+  shift
+  resolve_cache_dir "$dir" || { printf '{"ok":false,"deleted":0,"bytes":0}\n'; return 0; }
+  local deleted=0 freed=0 line real
+  # Paths come on argv when the caller knows them (the common case, straight
+  # from the cache index) and on stdin when the list is too long to pass there.
+  gc_one() {
+    local line=$1 real
+    [[ -n $line ]] || return 0
+    [[ $line == /* ]] || return 0
+    [[ $line == *".."* ]] && return 0
+    [[ -f $line ]] || return 0
+    real=$(cd -- "$(dirname -- "$line")" 2>/dev/null && pwd -P)/$(basename -- "$line")
+    [[ $real == "$CACHE_DIR"/* ]] || return 0
+    freed=$(( freed + $(file_size "$real") ))
+    rm -f -- "$real" 2>/dev/null && deleted=$(( deleted + 1 ))
+  }
+  if [[ $# -gt 0 ]]; then
+    for line in "$@"; do gc_one "$line"; done
+    printf '{"ok":true,"deleted":%s,"bytes":%s}\n' "$deleted" "$freed"
+    return 0
+  fi
+  while IFS= read -r line; do
+    gc_one "$line"
+  done
+  printf '{"ok":true,"deleted":%s,"bytes":%s}\n' "$deleted" "$freed"
+}
+
+# Inventory, so the caller can tell which pictures on disk no story claims any
+# more and how much space the cache is actually using.
+cmd_list() {
+  local dir=$1
+  resolve_cache_dir "$dir" || { printf '{"ok":false,"files":[],"bytes":0}\n'; return 0; }
+  local first=1 total=0 size f
+  printf '{"ok":true,"files":['
+  while IFS= read -r -d '' f; do
+    size=$(file_size "$f")
+    total=$(( total + size ))
+    [[ $first -eq 1 ]] || printf ','
+    first=0
+    printf '{"path":"%s","bytes":%s}' "$(json_escape "$f")" "$size"
+  done < <(find "$CACHE_DIR" -maxdepth 1 -type f ! -name '.tmp.*' -print0 2>/dev/null)
+  printf '],"bytes":%s}\n' "$total"
+}
+
+main() {
+  local cmd=${1-}
+  case $cmd in
+    page)  [[ $# -eq 4 ]] || { emit false "" "" "" "" "" 0 "usage: news-media page <dir> <url> <id>"; exit 0; }
+           cmd_page "$2" "$3" "$4" ;;
+    image) [[ $# -eq 4 ]] || { emit false "" "" "" "" "" 0 "usage: news-media image <dir> <url> <id>"; exit 0; }
+           cmd_image "$2" "$3" "$4" ;;
+    list)  [[ $# -eq 2 ]] || { printf '{"ok":false,"files":[],"bytes":0}\n'; exit 0; }
+           cmd_list "$2" ;;
+    gc)    [[ $# -ge 2 ]] || { printf '{"ok":false,"deleted":0,"bytes":0}\n'; exit 0; }
+           shift
+           cmd_gc "$@" ;;
+    *)     emit false "" "" "" "" "" 0 "unknown command" ;;
+  esac
+}
+
+main "$@"

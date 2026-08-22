@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "id": "alejandro-llanes.news",
+  "name": "News",
+  "version": "1.0.0",
+  "author": "Alejandro Llanes",
+  "license": "MIT",
+  "description": "A news reader in the bar. Hacker News out of the box, any RSS/Atom feed you add, with article artwork, bookmarks, and a cache you control.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "News",
+    "description": "Headlines from Hacker News and your own feeds",
+    "category": "Info",
+    "allowMultiple": false,
+    "defaultSection": "left",
+    "defaults": {
+      "sources": [
+        { "type": "hn", "label": "Hacker News", "url": "", "enabled": true }
+      ],
+      "refreshMinutes": 30,
+      "retentionDays": 7,
+      "maxPerSource": 40,
+      "fetchArtwork": true,
+      "showMedia": true,
+      "pauseNetwork": false,
+      "barMode": "headline",
+      "rotateSeconds": 12,
+      "markReadOnOpen": true,
+      "icon": ""
+    },
+    "schema": [
+      {
+        "key": "refreshMinutes",
+        "type": "integer",
+        "label": "Refresh every",
+        "min": 5,
+        "max": 1440,
+        "step": 5,
+        "defaultValue": 30,
+        "description": "Minutes between polls. Every source is fetched on the same tick, spaced a couple of seconds apart so a slow server never blocks the others."
+      },
+      {
+        "key": "retentionDays",
+        "type": "integer",
+        "label": "Keep unread stories for",
+        "min": 1,
+        "max": 90,
+        "step": 1,
+        "defaultValue": 7,
+        "description": "Days. Older stories are dropped on cleanup. Bookmarks are never dropped, whatever their age."
+      },
+      {
+        "key": "maxPerSource",
+        "type": "integer",
+        "label": "Stories kept per source",
+        "min": 10,
+        "max": 200,
+        "step": 10,
+        "defaultValue": 40,
+        "description": "A ceiling per feed, applied newest-first. Bookmarks sit outside the ceiling."
+      },
+      {
+        "key": "fetchArtwork",
+        "type": "boolean",
+        "label": "Fetch missing artwork",
+        "defaultValue": true,
+        "description": "When a feed ships no image, read the article page's OpenGraph tags to find one. This contacts the publisher's site; turn it off and only artwork the feed itself provides is used."
+      },
+      {
+        "key": "showMedia",
+        "type": "boolean",
+        "label": "Show artwork in cards",
+        "defaultValue": true,
+        "description": "Off gives a dense, text-only list. Artwork already on disk is kept, not deleted."
+      },
+      {
+        "key": "pauseNetwork",
+        "type": "boolean",
+        "label": "Cache only (no network)",
+        "defaultValue": false,
+        "description": "A real kill switch. Nothing leaves the machine; the reader keeps working from disk."
+      },
+      {
+        "key": "barMode",
+        "type": "enum",
+        "label": "Bar shows",
+        "options": [
+          "headline",
+          "count",
+          "icon"
+        ],
+        "defaultValue": "headline",
+        "description": "Headline rotates through unread stories. Count is just the unread number. Icon is the quietest option."
+      },
+      {
+        "key": "rotateSeconds",
+        "type": "integer",
+        "label": "Headline rotates every",
+        "min": 4,
+        "max": 120,
+        "step": 1,
+        "defaultValue": 12,
+        "description": "Seconds. Only applies while the bar is in headline mode."
+      },
+      {
+        "key": "markReadOnOpen",
+        "type": "boolean",
+        "label": "Mark read when opened",
+        "defaultValue": true,
+        "description": "Opening a story in the browser marks it read. Off keeps the unread count under your control alone."
+      }
+    ]
+  }
+}
