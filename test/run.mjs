@@ -12,6 +12,7 @@ const M = loadLib("Media.js")
 const Feed = loadLib("Feed.js")
 const Store = loadLib("Store.js")
 const Src = loadLib("Sources.js")
+const Opml = loadLib("Opml.js")
 
 let pass = 0, fail = 0
 const failures = []
@@ -303,6 +304,43 @@ eq("rss endpoint is the url itself",
 // sid is derived; persisting it would let a stale copy outlive its URL.
 ok("persisted config carries no derived id", Src.toConfig(Src.normalize([]))[0].sid === undefined)
 eq("every preset normalises", Src.PRESETS.filter(p => Src.normalize([p]).length === 1).length, Src.PRESETS.length)
+
+// ============================================================ OPML
+const opml = Opml.parse(fixtureText("export.opml"))
+ok("an exported OPML file parses", opml.ok)
+eq("every usable feed is found, nested folders flattened, duplicates dropped",
+   opml.feeds.map(f => f.url),
+   ["https://lobste.rs/rss", "https://feeds.arstechnica.com/arstechnica/index",
+    "https://example.org/feed?a=1&b=2", "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "https://untitled.example/atom.xml"])
+eq("title wins over text", opml.feeds[3].label, "BBC World")
+eq("entities in attributes are decoded", opml.feeds[2].label, "Single & quoted")
+eq("an untitled outline gets no label (the domain is used later)", opml.feeds[4].label, "")
+eq("file: and javascript: outlines are skipped and counted", opml.skipped, 2)
+ok("commented-out outlines are not subscriptions",
+   !opml.feeds.some(f => /commented/.test(f.url)))
+ok("htmlUrl is never mistaken for the feed",
+   !opml.feeds.some(f => f.url === "https://untitled.example/"))
+eq("every imported feed normalises", Src.normalize(opml.feeds).length, opml.feeds.length)
+eq("a non-OPML file is refused", Opml.parse(fixtureText("lobsters.xml")).ok, false)
+eq("an OPML file with only folders reports no feeds",
+   Opml.parse('<opml><body><outline text="Empty"/></body></opml>').error, "No feeds in the file")
+eq("an OPML file with only unusable feeds says so",
+   Opml.parse('<opml><body><outline xmlUrl="ftp://x/y"/></body></opml>').error, "No usable http(s) feeds in the file")
+const tooMany = "<opml><body>" + Array.from({ length: Opml.MAX_FEEDS + 1 },
+  (_, i) => `<outline xmlUrl="https://f${i}.example/rss"/>`).join("") + "</body></opml>"
+eq("an absurdly long list is refused, not truncated", Opml.parse(tooMany).ok, false)
+
+const existing = Src.normalize([{ type: "hn", feed: "front_page" },
+  { type: "rss", url: "https://lobste.rs/rss", label: "My Lobsters", enabled: false }])
+const merged = Opml.merge(existing, opml.feeds)
+eq("merging appends only new feeds", merged.added.length, 4)
+eq("and counts the ones already present", merged.duplicates, 1)
+eq("existing sources keep their place", merged.list.slice(0, 2).map(s => s.sid), ["hn", "rss-lobste-rs-rss"])
+eq("and their label", merged.list[1].label, "My Lobsters")
+eq("and their enabled state", merged.list[1].enabled, false)
+eq("an untitled import falls back to its domain", merged.list[merged.list.length - 1].label, "untitled.example")
+eq("merging into a QML-wrapped list works", Opml.merge(asQmlList(existing), opml.feeds).list.length, 6)
 
 // ============================================================
 console.log(`\n${pass} passed, ${fail} failed`)

@@ -19,6 +19,8 @@
 #   news-media image <cache-dir> <image-url>   <item-id>   download only
 #   news-media list  <cache-dir>                           inventory the picture cache
 #   news-media gc    <cache-dir> [path...]                  delete those files (or stdin)
+#   news-media opml  <path>                                read a local OPML file, bounded
+#   news-media pick                                        file chooser for an OPML file
 #
 # Emits one JSON object on stdout. Failure is reported in that JSON, not by
 # exit status: a story with no picture is a normal outcome, not an error.
@@ -45,6 +47,7 @@ readonly IMAGE_MAX_PIXELS=16000000
 readonly CONNECT_TIMEOUT=8
 readonly TOTAL_TIMEOUT=20
 readonly FEED_MAX_BYTES=4194304     # 4 MB; the largest feed tested against is ~80 KB
+readonly OPML_MAX_BYTES=2097152     # 2 MB; an export of a few hundred feeds is ~100 KB
 
 json_escape() {
   local s=${1-}
@@ -338,6 +341,51 @@ cmd_list() {
   printf '],"bytes":%s}\n' "$total"
 }
 
+# Read a local OPML file for import. Same contract as cmd_feed: the body on
+# stdout, one line of JSON metadata on stderr. The path is the user's own
+# choice, so it may point anywhere they can read -- but only regular files are
+# read, and never more than OPML_MAX_BYTES of them, so pointing it at
+# /dev/zero or a multi-gigabyte log costs nothing.
+cmd_opml() {
+  local path=$1
+  [[ $path == "~" ]] && path=$HOME
+  [[ $path == "~/"* ]] && path=$HOME/${path#"~/"}
+  [[ $path == file://* ]] && path=${path#file://}
+  if [[ -z $path || $path != /* ]]; then
+    printf '{"ok":false,"error":"enter an absolute path (or one starting with ~/)"}\n' >&2; return 0
+  fi
+  if [[ ! -e $path ]]; then
+    printf '{"ok":false,"error":"no such file"}\n' >&2; return 0
+  fi
+  if [[ ! -f $path || ! -r $path ]]; then
+    printf '{"ok":false,"error":"not a readable file"}\n' >&2; return 0
+  fi
+  local size
+  size=$(file_size "$path")
+  if (( size > OPML_MAX_BYTES )); then
+    printf '{"ok":false,"error":"file is larger than 2 MB"}\n' >&2; return 0
+  fi
+  head -c "$OPML_MAX_BYTES" -- "$path"
+  printf '{"ok":true,"path":"%s","size":%s}\n' "$(json_escape "$path")" "$size" >&2
+}
+
+# A file chooser, when one is installed. Prints the chosen path, or nothing if
+# the user cancelled or no chooser exists; the caller falls back to the typed
+# path either way.
+cmd_pick() {
+  local start=${HOME:-/}/
+  if command -v zenity >/dev/null 2>&1; then
+    zenity --file-selection --title='Import OPML' --filename="$start" \
+           --file-filter='OPML (*.opml *.xml) | *.opml *.OPML *.xml *.XML' \
+           --file-filter='All files | *' 2>/dev/null
+  elif command -v kdialog >/dev/null 2>&1; then
+    kdialog --title 'Import OPML' --getopenfilename "$start" 'OPML (*.opml *.xml)' 2>/dev/null
+  else
+    printf '{"ok":false,"error":"no file chooser installed (zenity or kdialog); type the path instead"}\n' >&2
+  fi
+  return 0
+}
+
 main() {
   local cmd=${1-}
   case $cmd in
@@ -352,6 +400,9 @@ main() {
     gc)    [[ $# -ge 2 ]] || { printf '{"ok":false,"deleted":0,"bytes":0}\n'; exit 0; }
            shift
            cmd_gc "$@" ;;
+    opml)  [[ $# -eq 2 ]] || { printf '{"ok":false,"error":"usage: news-media opml <path>"}\n' >&2; exit 0; }
+           cmd_opml "$2" ;;
+    pick)  cmd_pick ;;
     *)     emit false "" "" "" "" "" 0 "unknown command" ;;
   esac
 }
