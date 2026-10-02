@@ -120,6 +120,21 @@ Paste any RSS or Atom feed URL into the settings menu to add your own, or take
 one of the known-good presets in the same place (Lobsters, Ars Technica, The
 Verge, BBC World, Show HN, Ask HN).
 
+### Importing an OPML file
+
+Coming from another feed reader? Export your subscriptions as OPML and import
+them in the settings menu: type the path (`~/feeds.opml` works) and press
+**Import**, or use **Browse…** to pick the file with a chooser (`zenity` or
+`kdialog`, whichever is installed).
+
+Every `<outline>` with an `xmlUrl` becomes a source; folders are flattened into
+one list in file order, and the outline's `title` (or `text`) becomes its label.
+Feeds that are already in your list keep their place, label and on/off state,
+so importing the same file twice changes nothing. Anything that is not `http`
+or `https` is skipped and counted in the result line. The file is read by
+`bin/news-media`, which only reads regular files and refuses anything over
+2 MB.
+
 <p align="center">
   <img src="docs/settings.png" alt="The settings menu: sources, refresh, reading, cache" width="820">
 </p>
@@ -238,8 +253,8 @@ BarWidget.qml      the bar pill; a pure view, it never fetches
 Panel.qml          the reader
 ConfigMenu.qml     sources and settings
 components/        MediaFrame, NewsCard, SourceChip
-lib/               Feed, Media, Store, Sources, Format  (pure JS, unit-tested)
-bin/news-media     bounded curl for OpenGraph scraping and artwork download
+lib/               Feed, Media, Store, Sources, Opml, Format  (pure JS, unit-tested)
+bin/news-media     bounded curl for feeds, OpenGraph scraping and artwork; bounded OPML reads
 ```
 
 One service instance owns every request. The bar widget is instantiated once per
@@ -289,7 +304,7 @@ wrote the feed.
 node test/run.mjs
 ```
 
-119 assertions, no dependencies, no network. Every fixture in `test/fixtures/`
+147 assertions, no dependencies, no network. Every fixture in `test/fixtures/`
 is a real response captured from the feed it is named after, so the parser is
 tested against markup that actually shipped:
 
@@ -301,6 +316,10 @@ tested against markup that actually shipped:
 - tracking parameters that would otherwise fork one story into many
 - a JS array crossing a QML `var` boundary, where `Array.isArray()` answers
   false and once silently discarded every configured feed
+
+The one exception is `export.opml`, which is hand-written to cover the OPML
+import's edge cases: nested folders, duplicates, commented-out outlines,
+single-quoted and entity-escaped attributes, and `file:`/`javascript:` URLs.
 
 ## Licence
 

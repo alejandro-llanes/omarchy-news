@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Controls
+import Quickshell.Io
 import qs.Commons
 import qs.Ui
 import "lib/Sources.js" as Sources
 import "lib/Format.js" as Fmt
+import "lib/Opml.js" as Opml
 
 // Right-click surface: sources, schedule, reading, and the cache controls.
 //
@@ -30,9 +32,11 @@ KeyboardPanel {
   property var sourceList: []
   property string addError: ""
   property bool clearArmed: false
+  property string importMessage: ""
+  property bool importFailed: false
 
   onOpenChanged: {
-    if (!open) { addError = ""; clearArmed = false; return }
+    if (!open) { addError = ""; clearArmed = false; importMessage = ""; return }
     menu.sourceList = svc ? svc.sources.slice() : Sources.normalize(null)
     if (svc) svc.measureCache()
   }
@@ -75,6 +79,54 @@ KeyboardPanel {
     }
   }
 
+  // ---- OPML import --------------------------------------------------------
+  // The file is read by bin/news-media rather than by FileView: the helper
+  // refuses anything that is not a regular file and caps the read, so a typo'd
+  // path to /dev/zero or a huge log never lands in the shell's heap.
+  readonly property string helperPath: svc ? svc.helperPath : ""
+  readonly property bool importBusy: opmlProc.running || pickProc.running
+
+  function importOpml(rawPath) {
+    var path = Fmt.collapse(rawPath)
+    if (!path) { menu.importFailed = true; menu.importMessage = "Enter the path to an OPML file, or browse for one"; return }
+    if (!menu.helperPath) { menu.importFailed = true; menu.importMessage = "The news service is not running"; return }
+    menu.importFailed = false
+    menu.importMessage = "Reading " + path + " …"
+    opmlProc.command = [menu.helperPath, "opml", path]
+    opmlProc.running = true
+  }
+
+  function finishImport(body, metaRaw) {
+    var meta = null
+    try { meta = JSON.parse(String(metaRaw).trim().split("\n").pop()) } catch (e) { meta = null }
+    if (!meta || meta.ok !== true) {
+      menu.importFailed = true
+      menu.importMessage = "Import failed: " + (meta && meta.error ? meta.error : "the file could not be read")
+      return
+    }
+    var parsed = Opml.parse(body)
+    if (!parsed.ok) { menu.importFailed = true; menu.importMessage = "Import failed: " + parsed.error; return }
+    var merged = Opml.merge(menu.sourceList, parsed.feeds)
+    var bits = []
+    bits.push(merged.added.length === 1 ? "1 feed imported" : merged.added.length + " feeds imported")
+    if (merged.duplicates) bits.push(merged.duplicates + " already present")
+    if (parsed.skipped) bits.push(parsed.skipped + " skipped (not http/https)")
+    menu.importFailed = merged.added.length === 0
+    menu.importMessage = bits.join("  ·  ")
+    if (!merged.added.length) return
+    opmlField.text = ""
+    // A changed source list is picked up by the service's applySettings, which
+    // marks the schedule due and fetches everything -- the new feeds included.
+    menu.commitSources(merged.list)
+  }
+
+  function browseOpml() {
+    if (!menu.helperPath) return
+    menu.importMessage = ""
+    pickProc.command = [menu.helperPath, "pick"]
+    pickProc.running = true
+  }
+
   readonly property var presetLabels: {
     var out = []
     for (var i = 0; i < Sources.PRESETS.length; i++) out.push(Sources.PRESETS[i].label)
@@ -92,6 +144,30 @@ KeyboardPanel {
 
   Item {
     anchors.fill: parent
+
+    Process {
+      id: opmlProc
+      running: false
+      stdout: StdioCollector { id: opmlBody; waitForEnd: true }
+      stderr: StdioCollector { id: opmlMeta; waitForEnd: true }
+      onExited: menu.finishImport(String(opmlBody.text || ""), String(opmlMeta.text || ""))
+    }
+
+    // A chooser is a convenience, not a requirement: cancelling it, or not
+    // having one installed, leaves the typed-path route working.
+    Process {
+      id: pickProc
+      running: false
+      stdout: StdioCollector { id: pickOut; waitForEnd: true }
+      stderr: StdioCollector { id: pickErr; waitForEnd: true }
+      onExited: {
+        var chosen = Fmt.collapse(String(pickOut.text || "").split("\n")[0])
+        if (chosen) { opmlField.text = chosen; menu.importOpml(chosen); return }
+        var meta = null
+        try { meta = JSON.parse(String(pickErr.text || "").trim()) } catch (e) { meta = null }
+        if (meta && meta.error) { menu.importFailed = true; menu.importMessage = meta.error }
+      }
+    }
 
     PanelKeyCatcher {
       id: keys
@@ -348,6 +424,56 @@ KeyboardPanel {
               options: menu.presetLabels
               onChanged: function(v) { if (v) { menu.addPreset(v); value = "" } }
             }
+          }
+        }
+
+        // ---- import an OPML file ---------------------------------------------
+        Column {
+          width: parent.width
+          spacing: Style.spacing.sm
+
+          Row {
+            width: parent.width
+            spacing: Style.spacing.sm
+
+            TextField {
+              id: opmlField
+              width: parent.width - browseButton.width - importButton.width - 2 * parent.spacing
+              placeholderText: "Import an OPML file: ~/feeds.opml"
+              onAccepted: if (!menu.importBusy) menu.importOpml(text)
+              onTextChanged: if (!menu.importBusy) menu.importMessage = ""
+            }
+
+            Button {
+              id: browseButton
+              text: "Browse…"
+              bordered: true
+              tooltipText: "Choose an OPML file exported from another feed reader"
+              enabled: !menu.importBusy && menu.helperPath !== ""
+              onClicked: menu.browseOpml()
+            }
+
+            Button {
+              id: importButton
+              text: "Import"
+              bordered: true
+              tooltipText: "Add every feed in the file. Feeds already in the list are left as they are."
+              enabled: !menu.importBusy
+              onClicked: menu.importOpml(opmlField.text)
+            }
+          }
+
+          Text {
+            textFormat: Text.PlainText
+            width: parent.width
+            visible: menu.importMessage !== ""
+            text: menu.importMessage
+            font.family: Style.font.family
+            font.pixelSize: Style.font.caption
+            color: menu.importFailed ? Color.urgent : Color.foreground
+            opacity: menu.importFailed ? 1.0 : 0.6
+            wrapMode: Text.WordWrap
+            renderType: Text.NativeRendering
           }
         }
 

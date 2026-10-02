@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Subscriptions exported from a feed reader</title>
+  </head>
+  <body>
+    <outline text="Tech" title="Tech">
+      <outline type="rss" text="Lobsters" title="Lobsters" xmlUrl="https://lobste.rs/rss" htmlUrl="https://lobste.rs/"/>
+      <outline type="rss" text="Ars Technica" xmlUrl="https://feeds.arstechnica.com/arstechnica/index"/>
+      <outline type="rss" text='Single &amp; quoted' xmlUrl='https://example.org/feed?a=1&amp;b=2'/>
+    </outline>
+    <outline text="News">
+      <outline type="rss" title="BBC World" text="ignored when title exists" xmlurl="https://feeds.bbci.co.uk/news/world/rss.xml"></outline>
+      <outline type="rss" text="Lobsters again" xmlUrl="https://lobste.rs/rss"/>
+    </outline>
+    <!-- <outline type="rss" text="Commented out" xmlUrl="https://commented.example/feed"/> -->
+    <outline type="rss" text="Local file" xmlUrl="file:///etc/passwd"/>
+    <outline type="rss" text="Script" xmlUrl="javascript:alert(1)"/>
+    <outline type="rss" xmlUrl="https://untitled.example/atom.xml" htmlUrl="https://untitled.example/"/>
+  </body>
+</opml>
